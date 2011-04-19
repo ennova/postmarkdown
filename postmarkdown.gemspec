@@ -23,6 +23,9 @@ Gem::Specification.new do |s|
 
   s.add_dependency 'rails', '3.0.6'
   s.add_dependency 'haml', '3.0.25'
+  s.add_dependency 'gravtastic'
+  s.add_dependency 'nokogiri'
+  s.add_dependency 'rdiscount'
 
   s.add_development_dependency 'rspec-rails', '2.5.0'
 end
