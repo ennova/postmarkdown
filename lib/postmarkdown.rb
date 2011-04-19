@@ -1,3 +1,3 @@
 module Postmarkdown
-  # Your code goes here...
+  require 'postmarkdown/engine' if defined?(Rails)
 end
