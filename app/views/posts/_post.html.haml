@@ -1,0 +1,15 @@
+= content_tag_for :article, post do
+  %header
+    %h1= link_to post.title, post
+    = image_tag post.gravatar_url(:size => 32, :default => 'identicon'), :height => 32, :width => 32
+    .meta
+      %time{:pubdate => 'true', :datetime => post.timestamp.iso8601}
+        Posted on #{post.date.strftime '%e %B %Y'}
+      %span
+        by
+        = post.author
+  - if summary
+    = post.summary_html
+    %p.more= link_to 'Read more&hellip;'.html_safe, post
+  - else
+    = post.content_html
