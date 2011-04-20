@@ -11,7 +11,7 @@ Gem::Specification.new do |s|
   s.licenses    = ['MIT']
 
   s.homepage    = ''
-  s.summary     = %q{A static file blog engine for Rails.}
+  s.summary     = %q{A simple Rails blog engine powered by markdown.}
   s.description = s.summary
 
   s.rubyforge_project = 'postmarkdown'
