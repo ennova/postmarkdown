@@ -1,3 +1,6 @@
 module Postmarkdown
-  require 'postmarkdown/engine' if defined?(Rails)
+  if defined?(Rails)
+    require 'postmarkdown/engine'
+    require 'postmarkdown/routes'
+  end
 end
