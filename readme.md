@@ -31,4 +31,4 @@ The above command will create the file `app/posts/2011-01-01-test-post.markdown`
 
 ## View post
 
-Open `http://localhost:3000/posts` in your browser and you should be able to navigate to your new post. The URL for your new post is `http://localhost:3000/posts/2011/01/test-post`.
+Open `http://localhost:3000/posts` in your browser and you should be able to navigate to your new post. The URL for your new post is `http://localhost:3000/posts/2011/01/01/test-post`.

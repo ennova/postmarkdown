@@ -15,7 +15,7 @@ class Post
   end
 
   def to_param
-    "%04d/%02d/%s" % [year, month, slug]
+    "%04d/%02d/%02d/%s" % [year, month, day, slug]
   end
 
   def to_key
@@ -48,7 +48,7 @@ class Post
     @date ||= Time.zone.parse(metadata[:date] || @date_str).to_date
   end
 
-  delegate :year, :month, :to => :date
+  delegate :year, :month, :day, :to => :date
 
   def timestamp
     date.to_time_in_current_zone
@@ -81,8 +81,8 @@ class Post
 
     def where(conditions = {})
       conditions = conditions.symbolize_keys
-      conditions.assert_valid_keys :year, :month, :slug, :to_param
-      [:year, :month].each do |key|
+      conditions.assert_valid_keys :year, :month, :day, :slug, :to_param
+      [:year, :month, :day].each do |key|
         conditions[key] = conditions[key].to_i if conditions[key].present?
       end
       all.select do |post|
