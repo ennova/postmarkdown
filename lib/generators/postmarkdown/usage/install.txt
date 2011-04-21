@@ -1,0 +1,10 @@
+Description:
+  This generator will create the directory structure and routes required by Postmarkdown. As an added bonus, it will create an example post for the current date.
+
+Example:
+  $ rails generate postmarkdown:install
+
+  This will:
+    - Create the directory `app/posts/`.
+    - Generate an example post using today's date: `app/posts/{{CURRENT_DATE}}-example-post.markdown`.
+    - Add default routes.
