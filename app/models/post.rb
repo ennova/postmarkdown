@@ -1,5 +1,4 @@
 class Post
-
   extend ActiveModel::Naming
 
   include Gravtastic
@@ -117,5 +116,4 @@ class Post
     end
     @metadata = (@metadata || {}).with_indifferent_access
   end
-
 end
