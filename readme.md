@@ -8,27 +8,68 @@ Postmarkdown is compatible with Rails 3 only and the gem is (soon to be) hosted 
 
 Simply add Postmarkdown to your Gemfile and bundle it up:
 
-  gem 'postmarkdown'
+    gem 'postmarkdown'
 
-Run the generator to setup Postmarkdown for your application:
+Then, run the generator to setup Postmarkdown for your application:
 
-  $ rails generate postmarkdown:install # not implemented yet
+    $ rails generate postmarkdown:install
 
 The above command performs the following actions:
 
-* Creates a `posts` directory underneath `app`. This directory is where your markdown files will live.
-* Adds some routes. By default the routes are setup underneath `/posts/*`, but you can customize this in `config/routes.rb`.
+* Create the directory `app/posts/`. This directory is where your markdown files will live.
+* Generate an example post using today's date, eg. `app/posts/2011-01-01-example-post.markdown`.
+* Add some routes. By default the routes are setup underneath the path `/posts/*`, to customize these routes check out the Customizing Routes section below.
 
 ## Usage
 
-## Generate post
+### Generate a new Post
 
-Here's an example of how to generate a new post using a slug:
+Here's an example of how to generate a new post using a slug and publish date:
 
-  $ rails generate postmarkdown:post 2011-01-01-test-post # not implemented yet
+    $ rails generate postmarkdown:post test-post --date=2011-01-01
 
 The above command will create the file `app/posts/2011-01-01-test-post.markdown`, which you can edit and add content to.
 
-## View post
+### View the Post
 
 Open `http://localhost:3000/posts` in your browser and you should be able to navigate to your new post. The URL for your new post is `http://localhost:3000/posts/2011/01/01/test-post`.
+
+## Overriding Files
+
+The easiest way to customize the Postmarkdown functionality or appearance is by using the override generator. This generator can copy files from the Postmarkdown core and place them into your Rails app. For example:
+
+    $ rails generate postmarkdown:override --controller           # overrides `app/controllers/posts_controller.rb`
+    $ rails generate postmarkdown:override --model                # overrides `app/models/post.rb`
+    $ rails generate postmarkdown:override --view=show.html.haml  # overrides `app/views/posts/show.html.haml`
+    $ rails generate postmarkdown:override --view=index.html.haml # overrides `app/views/posts/index.html.haml`
+    $ rails generate postmarkdown:override --view=_post.html.haml # overrides `app/views/posts/_post.html.haml`
+
+## Customizing Routes
+
+By default Postmarkdown will setup all routes to go through the `/posts/*` path. For example:
+
+    http://example.com/posts                      # lists all posts
+    http://example.com/posts/2011                 # lists all posts from 2011
+    http://example.com/posts/2011/01              # lists all posts from January 2011
+    http://example.com/posts/2011/01/01           # lists all posts from the 1st of January 2011
+    http://example.com/posts/2011/01/01/test-post # show the specified post
+
+You can change the default route path by modifying the 'postmarkdown' line in `routes.rb`. For example:
+
+    postmarkdown :as => :blog
+
+This will produce the following routes:
+
+    http://example.com/blog                      # lists all posts
+    http://example.com/blog/2011                 # lists all posts from 2011
+    http://example.com/blog/2011/01              # lists all posts from January 2011
+    http://example.com/blog/2011/01/01           # lists all posts from the 1st of January 2011
+    http://example.com/blog/2011/01/01/test-post # show the specified post
+
+## Example Directory Structure
+
+![Postmarkdown Directory Structure](http://i.imgur.com/fOcnn.png)
+
+## License
+
+MIT License. Copyright 2011 Ennova.
