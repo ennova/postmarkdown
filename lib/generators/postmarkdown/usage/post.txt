@@ -1,0 +1,14 @@
+Description:
+  This generator will produce a new post by creating a markdown file in the `app/posts/` directory. The filename for the new file will be generated using the slug and publish date specified.
+
+Example 1:
+  $ rails generate postmarkdown:post example-1
+
+  This will:
+    - Generate a new post using the slug specified and today's date: `app/posts/{{CURRENT_DATE}}-example-1.markdown`.
+
+Example 2:
+  $ rails generate postmarkdown:post example-2 --date=2012-04-10
+
+  This will:
+    - Generate a new post using the slug and publish date specified: `app/posts/2012-04-10-example-2.markdown`.
