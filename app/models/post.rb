@@ -14,7 +14,15 @@ class Post
   end
 
   def to_param
-    "%04d/%02d/%02d/%s" % [year, month, day, slug]
+    case permalink_format
+    when :day   then "%04d/%02d/%02d/%s" % [year, month, day, slug]
+    when :month then "%04d/%02d/%s"      % [year, month, slug]
+    when :year  then "%04d/%s"           % [year, slug]
+    end
+  end
+
+  def permalink_format
+    Postmarkdown::Config.options[:permalink_format]
   end
 
   def to_key

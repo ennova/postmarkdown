@@ -66,6 +66,12 @@ This will produce the following routes:
     http://example.com/blog/2011/01/01           # lists all posts from the 1st of January 2011
     http://example.com/blog/2011/01/01/test-post # show the specified post
 
+You can also customize the `posts#show` route via the `:permalink_format` option:
+
+    postmarkdown :as => :blog, :permalink_format => :day   # URL: http://example.com/blog/2011/01/01/test-post
+    postmarkdown :as => :blog, :permalink_format => :month # URL: http://example.com/blog/2011/01/test-post
+    postmarkdown :as => :blog, :permalink_format => :year  # URL: http://example.com/blog/2011/test-post
+
 ## Example Directory Structure
 
 ![Postmarkdown Directory Structure](http://i.imgur.com/fOcnn.png)
