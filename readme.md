@@ -38,11 +38,9 @@ Open `http://localhost:3000/posts` in your browser and you should be able to nav
 
 The easiest way to customize the Postmarkdown functionality or appearance is by using the override generator. This generator can copy files from the Postmarkdown core and place them into your Rails app. For example:
 
-    $ rails generate postmarkdown:override --controller           # overrides `app/controllers/posts_controller.rb`
-    $ rails generate postmarkdown:override --model                # overrides `app/models/post.rb`
-    $ rails generate postmarkdown:override --view=show.html.haml  # overrides `app/views/posts/show.html.haml`
-    $ rails generate postmarkdown:override --view=index.html.haml # overrides `app/views/posts/index.html.haml`
-    $ rails generate postmarkdown:override --view=_post.html.haml # overrides `app/views/posts/_post.html.haml`
+    $ rails generate postmarkdown:override --controller # overrides `app/controllers/posts_controller.rb`
+    $ rails generate postmarkdown:override --model      # overrides `app/models/post.rb`
+    $ rails generate postmarkdown:override --views      # overrides all files in directory `app/views/posts/`
 
 ## Customizing Routes
 
