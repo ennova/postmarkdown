@@ -40,4 +40,9 @@ describe Post do
     subject { test_post '2011-04-28-image' }
     its(:summary_html) { should =~ /^<p>Image description/ }
   end
+
+  context "with custom summary post" do
+    subject { test_post '2011-04-28-summary' }
+    its(:summary_html) { should == '<p>This is a custom &amp; test summary.</p>' }
+  end
 end

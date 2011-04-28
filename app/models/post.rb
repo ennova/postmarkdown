@@ -78,11 +78,17 @@ class Post
     self.allowed_tags -= %w(img)
   end
 
+  TagHelper = Class.new.extend ActionView::Helpers::TagHelper
+
   def summary_html
-    html = Sanitizer.new.sanitize(content_html)
-    doc = Nokogiri::HTML.fragment(html)
-    para = doc.search('p').detect { |p| p.text.present? }
-    para.try(:to_html).try(:html_safe)
+    if metadata[:summary].present?
+      TagHelper.content_tag :p, metadata[:summary]
+    else
+      html = Sanitizer.new.sanitize(content_html)
+      doc = Nokogiri::HTML.fragment(html)
+      para = doc.search('p').detect { |p| p.text.present? }
+      para.try(:to_html).try(:html_safe)
+    end
   end
 
   class << self
