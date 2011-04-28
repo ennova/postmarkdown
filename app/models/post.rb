@@ -74,9 +74,15 @@ class Post
     RDiscount.new(content).to_html.html_safe
   end
 
+  class Sanitizer < HTML::WhiteListSanitizer
+    self.allowed_tags -= %w(img)
+  end
+
   def summary_html
-    doc = Nokogiri::HTML.fragment(content_html)
-    doc.at('p').try(:to_html).try(:html_safe)
+    html = Sanitizer.new.sanitize(content_html)
+    doc = Nokogiri::HTML.fragment(html)
+    para = doc.search('p').detect { |p| p.text.present? }
+    para.try(:to_html).try(:html_safe)
   end
 
   class << self

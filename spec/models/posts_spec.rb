@@ -35,4 +35,9 @@ describe Post do
     its(:title) { should == 'This is a custom title' }
     its(:content) { should == "Content goes here.\n" }
   end
+
+  context "with image post" do
+    subject { test_post '2011-04-28-image' }
+    its(:summary_html) { should =~ /^<p>Image description/ }
+  end
 end
