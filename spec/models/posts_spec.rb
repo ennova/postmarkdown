@@ -24,8 +24,10 @@ describe Post do
     its(:content) { should =~ /\ALorem ipsum/ }
     its(:content_html) { should =~ /^<p>Lorem ipsum/ }
     its(:content_html) { should =~ /^<p>Duis aute irure dolor/ }
+    its(:content_html) { should be_html_safe }
     its(:summary_html) { should =~ /^<p>Lorem ipsum/ }
     its(:summary_html) { should_not =~ /^<p>Duis aute irure dolor/ }
+    its(:summary_html) { should be_html_safe }
   end
 
   context "with custom title post" do
@@ -39,10 +41,12 @@ describe Post do
   context "with image post" do
     subject { test_post '2011-04-28-image' }
     its(:summary_html) { should =~ /^<p>Image description/ }
+    its(:summary_html) { should be_html_safe }
   end
 
   context "with custom summary post" do
     subject { test_post '2011-04-28-summary' }
     its(:summary_html) { should == '<p>This is a custom &amp; test summary.</p>' }
+    its(:summary_html) { should be_html_safe }
   end
 end
