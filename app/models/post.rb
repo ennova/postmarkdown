@@ -75,7 +75,7 @@ class Post
   end
 
   class Sanitizer < HTML::WhiteListSanitizer
-    self.allowed_tags -= %w(img)
+    self.allowed_tags -= %w(img a)
   end
 
   TagHelper = Class.new.extend ActionView::Helpers::TagHelper
