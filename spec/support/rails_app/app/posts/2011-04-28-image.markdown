@@ -1,0 +1,3 @@
+<img src="example.png" />
+
+Image description.
