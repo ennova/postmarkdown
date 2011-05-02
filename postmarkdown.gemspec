@@ -28,5 +28,7 @@ Gem::Specification.new do |s|
   s.add_dependency 'rdiscount'
 
   s.add_development_dependency 'rspec-rails', '~> 2.5'
+  s.add_development_dependency 'capybara', '~> 1.0.0.beta'
   s.add_development_dependency 'sqlite3'
+  s.add_development_dependency 'delorean', '>= 0.2'
 end
