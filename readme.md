@@ -98,7 +98,7 @@ You can also customize the `posts#show` route via the `:permalink_format` option
   * RSpec tests for routes
   * Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`
   * Text for when there's no posts on the index page, eg. 'There are no posts'
-  * Fix pre code blocks
+  * <del>Fix pre code blocks</del>
   * RSpec acceptance test for pre code blocks (= vs ~)
   * RSpec model tests for author and email
   * RSpec tests for the xml feed
