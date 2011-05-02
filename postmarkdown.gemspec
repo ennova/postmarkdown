@@ -21,12 +21,12 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib']
 
-  s.add_dependency 'rails', '3.0.6'
-  s.add_dependency 'haml', '3.1.0.alpha.147'
+  s.add_dependency 'rails', '~> 3.0.6'
+  s.add_dependency 'haml', '~> 3.1.0.alpha.147'
   s.add_dependency 'gravtastic'
   s.add_dependency 'nokogiri'
   s.add_dependency 'rdiscount'
 
-  s.add_development_dependency 'rspec-rails', '2.5.0'
+  s.add_development_dependency 'rspec-rails', '~> 2.5.0'
   s.add_development_dependency 'sqlite3'
 end
