@@ -2,6 +2,7 @@ require 'spec_helper'
 
 describe 'Post views', :type => :request do
   before { time_travel_to '2011-05-01' }
+  after { back_to_the_present }
 
   context 'Posts#index' do
     before { visit posts_path }
