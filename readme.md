@@ -90,6 +90,25 @@ You can also customize the `posts#show` route via the `:permalink_format` option
     │           ├── index.html.haml
     │           └── show.html.haml
 
+## TODO
+
+### Before Launch
+  * Route: `postmarkdown :permalink_format => :slug`
+  * Add info about blog at root to readme
+  * RSpec tests for routes
+  * Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`
+  * Text for when there's no posts on the index page, eg. 'There are no posts'
+  * Fix pre code blocks
+  * RSpec acceptance test for pre code blocks (= vs ~)
+  * RSpec model tests for author and email
+  * RSpec tests for the xml feed
+
+### After Launch
+  * Redcarpet (and syntax highlighting)
+  * Better comments in generated routes
+  * Code comments (RDoc quality)
+  * Pagination? Use a gem or basic custom solution? Support will\_paginate if possible, otherwise custom solution using the config module.
+  * Support more file formats, eg. textile
 
 ## License
 
