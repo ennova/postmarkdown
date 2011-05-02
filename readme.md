@@ -72,7 +72,24 @@ You can also customize the `posts#show` route via the `:permalink_format` option
 
 ## Example Directory Structure
 
-![Postmarkdown Directory Structure](http://i.imgur.com/fOcnn.png)
+    ├── app
+    │   ├── controllers
+    │   ├── helpers
+    │   ├── mailers
+    │   ├── models
+    │   ├── posts (where your markdown files live)
+    │   │   ├── 2011-04-01-example-1.markdown
+    │   │   ├── 2011-04-02-example-2.markdown
+    │   │   ├── 2011-04-03-example-3.markdown
+    │   │   ├── 2011-04-04-example-4.markdown
+    │   └── views
+    │       └── posts (overridable)
+    │           ├── _feed_link.html.haml
+    │           ├── _post.html.haml
+    │           ├── feed.xml.builder
+    │           ├── index.html.haml
+    │           └── show.html.haml
+
 
 ## License
 
