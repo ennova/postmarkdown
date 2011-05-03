@@ -125,6 +125,8 @@ What about mapping Postmarkdown to root? We got you covered:
   * RSpec acceptance test for pre code blocks (= vs ~)
   * <del>RSpec model tests for author and email</del>
   * RSpec tests for the xml feed
+  * Set default feed title to app name + route path
+    * For example, `TestApp::Application` with the route `postmarkdown :as => :awesome_blog` would generate the feed title would be 'Test App Awesome Blog'
 
 ### After Launch
   * Redcarpet (and syntax highlighting)
