@@ -71,6 +71,11 @@ You can also customize the `posts#show` route via the `:permalink_format` option
     postmarkdown :as => :blog, :permalink_format => :year  # URL: http://example.com/blog/2011/test-post
     postmarkdown :as => :blog, :permalink_format => :slug  # URL: http://example.com/blog/test-post
 
+What about mapping Postmarkdown to root? We got you covered:
+
+    postmarkdown :as => ''
+    root :to => 'posts#index'
+
 ## Example Directory Structure
 
     ├── app
@@ -95,7 +100,7 @@ You can also customize the `posts#show` route via the `:permalink_format` option
 
 ### Before Launch
   * <del>Route: `postmarkdown :permalink_format => :slug`</del>
-  * Add info about blog at root to readme
+  * <del>Add info about blog at root to readme</del>
   * <del>RSpec tests for routes</del>
   * <del>Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`</del>
   * Text for when there's no posts on the index page, eg. 'There are no posts'
