@@ -49,4 +49,18 @@ describe Post do
     its(:summary_html) { should == '<p>This is a custom &amp; test summary.</p>' }
     its(:summary_html) { should be_html_safe }
   end
+
+  context 'with alternate markdown file extension' do
+    it 'should accept *.md files' do
+      lambda { test_post('2011-05-02-md-file-extension.md').content }.should_not raise_error
+    end
+
+    it 'should accept *.mkd files' do
+      lambda { test_post('2011-05-02-mkd-file-extension.mkd').content }.should_not raise_error
+    end
+
+    it 'should accept *.mdown files' do
+      lambda { test_post('2011-05-02-mdown-file-extension.mdown').content }.should_not raise_error
+    end
+  end
 end

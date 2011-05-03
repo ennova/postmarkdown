@@ -94,7 +94,8 @@ class Post
 
   class << self
     def all
-      @@posts ||= Dir[Rails.root + 'app/posts/*.markdown'].map do |filename|
+      file_extensions = Postmarkdown::Config.options[:markdown_file_extensions].join(',')
+      @@posts ||= Dir.glob(Rails.root + "app/posts/*.{#{file_extensions}}").map do |filename|
         Post.new filename
       end.select(&:visible?).sort_by(&:date).reverse
     end
