@@ -18,6 +18,7 @@ class Post
     when :day   then "%04d/%02d/%02d/%s" % [year, month, day, slug]
     when :month then "%04d/%02d/%s"      % [year, month, slug]
     when :year  then "%04d/%s"           % [year, slug]
+    when :slug  then slug
     end
   end
 

@@ -45,6 +45,14 @@ describe PostsController do
       { :get => path }.should route_to :controller => 'posts', :action => 'index'
     end
 
+    it '/blog/test-post to Posts#show with a permalink format of slug' do
+      Rails.application.routes.draw { postmarkdown :as => :blog, :permalink_format => :slug }
+
+      path = post_path(:id => 'test-post')
+      path.should == '/blog/test-post'
+      { :get => path }.should route_to :controller => 'posts', :action => 'show', :id => 'test-post'
+    end
+
     it '/blog/2012/test-post to Posts#show with a permalink format of year' do
       Rails.application.routes.draw { postmarkdown :as => :blog, :permalink_format => :year }
 

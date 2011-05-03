@@ -69,6 +69,7 @@ You can also customize the `posts#show` route via the `:permalink_format` option
     postmarkdown :as => :blog, :permalink_format => :day   # URL: http://example.com/blog/2011/01/01/test-post
     postmarkdown :as => :blog, :permalink_format => :month # URL: http://example.com/blog/2011/01/test-post
     postmarkdown :as => :blog, :permalink_format => :year  # URL: http://example.com/blog/2011/test-post
+    postmarkdown :as => :blog, :permalink_format => :slug  # URL: http://example.com/blog/test-post
 
 ## Example Directory Structure
 
@@ -93,7 +94,7 @@ You can also customize the `posts#show` route via the `:permalink_format` option
 ## TODO
 
 ### Before Launch
-  * Route: `postmarkdown :permalink_format => :slug`
+  * <del>Route: `postmarkdown :permalink_format => :slug`</del>
   * Add info about blog at root to readme
   * <del>RSpec tests for routes</del>
   * Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`
