@@ -95,7 +95,7 @@ You can also customize the `posts#show` route via the `:permalink_format` option
 ### Before Launch
   * Route: `postmarkdown :permalink_format => :slug`
   * Add info about blog at root to readme
-  * RSpec tests for routes
+  * <del>RSpec tests for routes</del>
   * Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`
   * Text for when there's no posts on the index page, eg. 'There are no posts'
   * <del>Fix pre code blocks</del>
