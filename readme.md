@@ -42,6 +42,23 @@ The easiest way to customize the Postmarkdown functionality or appearance is by 
     $ rails generate postmarkdown:override --model      # overrides `app/models/post.rb`
     $ rails generate postmarkdown:override --views      # overrides all files in directory `app/views/posts/`
 
+## RSS Feed
+
+Postmarkdown comes prepared with a fully functional RSS feed.
+
+You can take advantage of the built-in feed by adding the feed link to your HTML head tag. For example, simply add the following to your default layout:
+
+    <head>
+      <!-- include your stylesheets and javascript here... -->
+      <%= yield :head %>
+    </head>
+
+To customize the feed title, add the following to your application.rb:
+
+    Postmarkdown::Config.options[:feed_title] = 'Custom Blog Title Goes Here'
+
+To link to the feed in your app, simply use the route helper: `<%= link_to 'RSS Feed', posts_feed_path %>`
+
 ## Customizing Routes
 
 By default Postmarkdown will setup all routes to go through the `/posts/*` path. For example:
