@@ -7,6 +7,8 @@ module Postmarkdown
   end
 end
 
+Postmarkdown::Config.options[:feed_title] = nil
+
 Postmarkdown::Config.options[:permalink_format] = :day
 
 Postmarkdown::Config.options[:permalink_regex] = {}

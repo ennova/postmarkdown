@@ -1,6 +1,6 @@
 xml.instruct!
 xml.feed :xmlns => 'http://www.w3.org/2005/Atom' do
-  xml.title "Envision"
+  xml.title Postmarkdown::Config.options[:feed_title]
   xml.link :href => posts_feed_url, :rel => :self, :type => 'application/atom+xml'
   xml.link :href => posts_url, :rel => :alternate, :type => 'text/html'
   xml.id root_url
