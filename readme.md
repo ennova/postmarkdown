@@ -101,7 +101,7 @@ You can also customize the `posts#show` route via the `:permalink_format` option
   * Text for when there's no posts on the index page, eg. 'There are no posts'
   * <del>Fix pre code blocks</del>
   * RSpec acceptance test for pre code blocks (= vs ~)
-  * RSpec model tests for author and email
+  * <del>RSpec model tests for author and email</del>
   * RSpec tests for the xml feed
 
 ### After Launch

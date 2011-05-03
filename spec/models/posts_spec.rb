@@ -38,6 +38,12 @@ describe Post do
     its(:content) { should == "Content goes here.\n" }
   end
 
+  context 'with author' do
+    subject { test_post '2011-05-01-full-metadata.markdown' }
+    its(:author) { should == 'John Smith' }
+    its(:email) { should == 'john.smith@example.com' }
+  end
+
   context 'with image post' do
     subject { test_post '2011-04-28-image.markdown' }
     its(:summary_html) { should =~ /^<p>Image description/ }
