@@ -5,6 +5,8 @@ class ActionDispatch::Routing::Mapper
     get "/#{options[:as]}(/:year(/:month(/:day)))" => 'posts#index', :as => :posts, :constraints => { :year => /\d{4}/, :month => /\d{2}/, :day => /\d{2}/}
     get "/#{options[:as]}/feed" => 'posts#feed', :as => :posts_feed, :format => :xml
     get "/#{options[:as]}/*id" => 'posts#show', :as => :post, :constraints => { :id => postmarkdown_permalink_regex(options) }
+
+    postmarkdown_feed_title(options[:as])
   end
 
   private
@@ -12,6 +14,11 @@ class ActionDispatch::Routing::Mapper
   def postmarkdown_permalink_regex(options)
     Postmarkdown::Config.options[:permalink_format] = options[:permalink_format]
     Postmarkdown::Config.options[:permalink_regex].try(:[], options[:permalink_format]) or raise_postmarkdown_permalink_error
+  end
+
+  def postmarkdown_feed_title(path)
+    app_name = Rails.application.class.name.split("::")[0..-2].join.titleize
+    Postmarkdown::Config.options[:feed_title] ||= "#{app_name} #{path.to_s.tr('/', '_').humanize.titleize}"
   end
 
   def raise_postmarkdown_permalink_error
