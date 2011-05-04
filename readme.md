@@ -53,7 +53,7 @@ You can take advantage of the built-in feed by adding the feed link to your HTML
       <%= yield :head %>
     </head>
 
-To customize the feed title, add the following to your application.rb:
+To customize the feed title, add the following to an initializer:
 
     Postmarkdown::Config.options[:feed_title] = 'Custom Blog Title Goes Here'
 
