@@ -116,24 +116,24 @@ What about mapping Postmarkdown to root? We got you covered:
 ## TODO
 
 ### Before Launch
-  * <del>Route: `postmarkdown :permalink_format => :slug`</del>
-  * <del>Add info about blog at root to readme</del>
-  * <del>RSpec tests for routes</del>
-  * <del>Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`</del>
-  * <del>Text for when there's no posts on the index page, eg. 'There are no posts'</del>
-  * <del>Fix pre code blocks</del>
-  * RSpec acceptance test for pre code blocks (= vs ~)
-  * <del>RSpec model tests for author and email</del>
-  * RSpec tests for the xml feed
-  * <del>Set default feed title to app name + route path</del>
-    * <del>For example, `TestApp::Application` with the route `postmarkdown :as => :awesome_blog` would generate the feed title would be 'Test App Awesome Blog'</del>
+* <del>Route: `postmarkdown :permalink_format => :slug`</del>
+* <del>Add info about blog at root to readme</del>
+* <del>RSpec tests for routes</del>
+* <del>Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`</del>
+* <del>Text for when there's no posts on the index page, eg. 'There are no posts'</del>
+* <del>Fix pre code blocks</del>
+* RSpec acceptance test for pre code blocks (= vs ~)
+* <del>RSpec model tests for author and email</del>
+* RSpec tests for the xml feed
+* <del>Set default feed title to app name + route path</del>
+  * <del>For example, `TestApp::Application` with the route `postmarkdown :as => :awesome_blog` would generate the feed title would be 'Test App Awesome Blog'</del>
 
 ### After Launch
-  * Redcarpet (and syntax highlighting)
-  * Better comments in generated routes
-  * Code comments (RDoc quality)
-  * Pagination? Use a gem or basic custom solution? Support will\_paginate if possible, otherwise custom solution using the config module.
-  * Support more file formats, eg. textile
+* Redcarpet (and syntax highlighting)
+* Better comments in generated routes
+* Code comments (RDoc quality)
+* Pagination? Use a gem or basic custom solution? Support will\_paginate if possible, otherwise custom solution using the config module.
+* Support more file formats, eg. textile
 
 ## License
 
