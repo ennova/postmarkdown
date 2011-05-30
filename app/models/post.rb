@@ -126,6 +126,10 @@ class Post
     def feed_last_modified
       feed.first.try(:last_modified) || Time.now.utc
     end
+
+    def reset!
+      @@posts = nil
+    end
   end
 
   protected

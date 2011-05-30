@@ -1,4 +1,8 @@
 = render 'feed_link'
 
 .container
-  %section.posts= render collection, :summary => true
+  %section.posts
+  - if collection.present?
+    = render collection, :summary => true
+  - else
+    No posts found.

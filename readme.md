@@ -120,7 +120,7 @@ What about mapping Postmarkdown to root? We got you covered:
   * <del>Add info about blog at root to readme</del>
   * <del>RSpec tests for routes</del>
   * <del>Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`</del>
-  * Text for when there's no posts on the index page, eg. 'There are no posts'
+  * <del>Text for when there's no posts on the index page, eg. 'There are no posts'</del>
   * <del>Fix pre code blocks</del>
   * RSpec acceptance test for pre code blocks (= vs ~)
   * <del>RSpec model tests for author and email</del>

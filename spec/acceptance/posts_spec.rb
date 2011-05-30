@@ -1,7 +1,11 @@
 require 'spec_helper'
 
 describe 'Post views', :type => :request do
-  before { time_travel_to '2011-05-01' }
+  before do
+    time_travel_to '2011-05-01'
+    Post.reset!
+  end
+
   after { back_to_the_present }
 
   context 'Posts#index' do
@@ -34,6 +38,16 @@ describe 'Post views', :type => :request do
       # 2015-02-13-custom-title (not published yet)
       page.should_not have_content('This is a custom title') # title
       page.should_not have_content('Content goes here.')     # summary
+    end
+  end
+
+  context 'Posts#index with no posts' do
+    it 'should show a message' do
+      time_travel_to '2010-05-01'
+      visit posts_path
+
+      page.should have_content('No posts found.')
+      page.should_not have_content('First Post')
     end
   end
 
