@@ -1,13 +1,12 @@
 TODO
 ----
 [ ] RSpec acceptance test for pre code blocks (= vs ~)
-[ ] RSpec tests for the xml feed
-[ ] 404 for missing post or invalid slug
-[ ] Add post author to feed
+[x] RSpec tests for the xml feed
+[x] 404 for missing post or invalid slug
+[x] Add post author to feed
 [ ] Test compatibility of `will_paginate` and other pagination gems
 [ ] Default theme
-[ ] Generator should generate `.html.erb` files instead of haml
-[ ] Generator should provide option to generate haml files, which will convert the erb files to haml
+[ ] Option to generate erb files instead of haml
 
 DONE
 ----
