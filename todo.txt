@@ -1,0 +1,23 @@
+TODO
+----
+[ ] RSpec acceptance test for pre code blocks (= vs ~)
+[ ] RSpec tests for the xml feed
+[ ] 404 for missing post or invalid slug
+[ ] Add nil as a `permalink_format` route option
+[ ] Add post author to feed
+[ ] Test compatibility of `will_paginate` and other pagination gems
+[ ] Default theme
+[ ] Generator should generate `.html.erb` files instead of haml
+[ ] Generator should provide option to generate haml files, which will convert the erb files to haml
+
+DONE
+----
+[x] Route: `postmarkdown :permalink_format => :slug`</del>
+[x] Add info about blog at root to readme</del>
+[x] RSpec tests for routes</del>
+[x] Support more markdown file extensions, eg. `*.md, *.mkd, *.mdown`</del>
+[x] Text for when there's no posts on the index page, eg. 'There are no posts'</del>
+[x] Fix pre code blocks</del>
+[x] RSpec model tests for author and email</del>
+[x] Set default feed title to app name + route path</del>
+  [x] For example, `TestApp::Application` with the route `postmarkdown :as => :awesome_blog` would generate the feed title would be 'Test App Awesome Blog'</del>
