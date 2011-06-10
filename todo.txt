@@ -3,7 +3,6 @@ TODO
 [ ] RSpec acceptance test for pre code blocks (= vs ~)
 [ ] RSpec tests for the xml feed
 [ ] 404 for missing post or invalid slug
-[ ] Add nil as a `permalink_format` route option
 [ ] Add post author to feed
 [ ] Test compatibility of `will_paginate` and other pagination gems
 [ ] Default theme
