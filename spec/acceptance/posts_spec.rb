@@ -107,4 +107,33 @@ describe 'Post views', :type => :request do
       page.should_not have_content('This is another custom & test summary.')
     end
   end
+
+  context 'Posts#feed' do
+    before { visit posts_feed_path }
+
+    it 'should be xml format type' do
+      page.response_headers['Content-Type'].should == 'application/atom+xml; charset=utf-8'
+    end
+
+    it 'should be valid xml' do
+      lambda do
+        Nokogiri::XML::Reader(page.source)
+      end.should_not raise_error
+    end
+
+    it 'should contain the correct number of entries' do
+       Nokogiri::XML(page.source).search('entry').size.should == 4
+    end
+
+    it 'should contain an entry that is properly constructed' do
+      entry = Nokogiri::XML(page.source).search('entry').first
+
+      entry.search('title').text.should == 'Post with full metadata'
+      entry.search('author').first.search('name').text.should == 'John Smith'
+      entry.search('author').first.search('email').text.should == 'john.smith@example.com'
+      entry.search('published').text.should == '2011-05-01T00:00:00Z'
+      entry.search('content').text == "\n      <p>First paragraph of content.</p>\n\n<p>Second paragraph of content.</p>\n\n    "
+    end
+  end
+
 end
