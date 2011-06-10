@@ -136,4 +136,11 @@ describe 'Post views', :type => :request do
     end
   end
 
+  context 'Posts#show with invalid slug' do
+    it 'should raise an not found exception' do
+      lambda do
+        visit post_path('2011/05/01/invalid')
+      end.should raise_error(ActiveRecord::RecordNotFound)
+    end
+  end
 end

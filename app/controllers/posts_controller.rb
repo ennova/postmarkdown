@@ -1,4 +1,8 @@
 class PostsController < ApplicationController
+  def show
+    resource
+  end
+
   def feed
     max_age = 4.hours
     response.headers['Cache-Control'] = 'public, max-age=' + max_age.to_i.to_s
