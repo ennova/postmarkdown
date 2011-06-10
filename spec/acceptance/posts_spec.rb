@@ -106,6 +106,10 @@ describe 'Post views', :type => :request do
     it 'should not show the summary' do
       page.should_not have_content('This is another custom & test summary.')
     end
+
+    it 'should preserve whitespace on code blocks' do
+      page.source.should match '<pre><code>First line of code.&#x000A;  Second line of code.&#x000A;</code></pre>'
+    end
   end
 
   context 'Posts#feed' do
