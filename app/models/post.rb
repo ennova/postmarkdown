@@ -119,6 +119,10 @@ class Post
       all.first
     end
 
+    def last
+      all.last
+    end
+
     def feed
       all.first(10)
     end
