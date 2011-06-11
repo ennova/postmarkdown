@@ -39,6 +39,10 @@ describe 'Post views', :type => :request do
       page.should_not have_content('This is a custom title') # title
       page.should_not have_content('Content goes here.')     # summary
     end
+
+    it 'should have the correct number of posts' do
+      all('section#posts article.post').size.should == 4
+    end
   end
 
   context 'Posts#index with no posts' do
