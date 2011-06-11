@@ -20,7 +20,7 @@ module Postmarkdown
     end
 
     def generate_post
-      copy_file 'example-post.markdown', "app/posts/#{publish_date}-#{slug.downcase}.markdown"
+      template 'example-post.markdown', "app/posts/#{publish_date}-#{slug.downcase}.markdown"
     end
 
     private

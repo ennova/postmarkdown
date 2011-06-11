@@ -3,5 +3,6 @@ module Postmarkdown
     require 'postmarkdown/engine'
     require 'postmarkdown/config'
     require 'postmarkdown/routes'
+    require 'postmarkdown/util'
   end
 end
