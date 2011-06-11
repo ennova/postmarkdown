@@ -7,6 +7,8 @@ TODO
 [ ] Test compatibility of `will_paginate` and other pagination gems
 [ ] Default theme
 [ ] Option to generate erb files instead of haml
+[ ] Better example post
+[ ] Generator automagically figures out who the author is based on git config
 
 DONE
 ----
