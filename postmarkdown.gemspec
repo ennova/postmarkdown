@@ -6,8 +6,8 @@ Gem::Specification.new do |s|
   s.name        = 'postmarkdown'
   s.version     = Postmarkdown::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Jason Weathered', 'Nathanael Kane',  'Odin Dutton']
-  s.email       = ['jason.weathered@ennova.com.au', 'nate.kane@ennova.com.au', 'odin.dutton@ennova.com.au']
+  s.authors     = ['Jason Weathered', 'Nathanael Kane',  'Odin Dutton', 'Adrian Smith']
+  s.email       = ['jason.weathered@ennova.com.au', 'nate.kane@ennova.com.au', 'odin.dutton@ennova.com.au', 'adrian.smith@ennova.com.au']
   s.licenses    = ['MIT']
 
   s.homepage    = ''
