@@ -4,11 +4,14 @@ TODO
 [x] RSpec tests for the xml feed
 [x] 404 for missing post or invalid slug
 [x] Add post author to feed
+[x] Better example post
+[x] Generator automagically figures out who the author is based on git config
 [ ] Test compatibility of `will_paginate` and other pagination gems
 [ ] Default theme
 [ ] Option to generate erb files instead of haml
-[ ] Better example post
-[ ] Generator automagically figures out who the author is based on git config
+[ ] Config option for using built-in theme
+[ ] Generator for using theme initializer
+[ ] Generator for overriding layout
 
 DONE
 ----
