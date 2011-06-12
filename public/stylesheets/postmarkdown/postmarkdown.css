@@ -1,0 +1,67 @@
+/* -- Reset ----------------------------------------------------------------- */
+body,div,dl,dt,dd,ul,ol,li,h1,h2,h4,h4,h5,h6,pre,code,form,fieldset,legend,input,button,textarea,p,blockquote,th,td{margin:0;padding:0}
+table{border-collapse:collapse;border-spacing:0}
+fieldset,img{border:0}
+address,caption,cite,code,dfn,em,strong,th,var,optgroup{font-style:inherit;font-weight:inherit}
+del,ins{text-decoration:none}
+li{list-style:none}
+caption,th{text-align:left}
+h1,h2,h3,h4,h5,h6{font-size:100%;font-weight:400}
+q:before,q:after{content:''}
+abbr,acronym{border:0;font-variant:normal}
+legend{color:#000}
+input,button,textarea,select,optgroup,option{font-family:inherit;font-size:inherit;font-style:inherit;font-weight:inherit}
+input,button,textarea,select{font-size:100%}
+sup,sub{vertical-align:baseline}
+header, nav, section, article, footer{display:block;}
+
+/* -- Global ---------------------------------------------------------------- */
+html{background:#F3F3F3;text-shadow:0px 1px 0px #fff;}
+body{width:760px;margin:40px auto;font:14px/140% 'Helvetica Neue', Arial, Helvetica, Sans-Serif;}
+a{color:#222;}
+
+h1, h2, h3, h4, h5, h6{font-weight:bold;}
+h1{font-size:26px;margin-bottom:5px;}
+h1 a{text-decoration:none;}
+h2{font-size:24px;padding-top:10px;margin:30px 0 20px;border-top:2px solid #ccc;}
+h3{font-size:20px;margin-bottom:20px;}
+h4{font-size:18px;margin-bottom:10px;}
+h5, h6{font-size:16px;margin-bottom:5px;}
+
+p{margin-bottom:20px;}
+em{font-style:italic;}
+sup{font-size:12px;vertical-align:super;}
+sub{font-size:12px;vertical-align:sub;}
+del{color:#666;font-style:line-through;}
+abbr{border-bottom:1px dotted #bbb;color:#666;text-transform:uppercase;}
+code{background:#eee;padding:2px 5px;font-family:Monospace;}
+small{color:#999;font-size:12px;}
+strong{font-weight:bold;}
+blockquote{color:#666;font-size:16px;margin-left:20px;font-family:Georgia, Serif;}
+
+/* code */
+pre{background:#eee;margin-bottom:20px;padding:10px;border:1px solid #ccc;border-width:1px 0;}
+
+/* lists */
+ol, ul{margin:0 0 20px 20px;}
+ol li{list-style:decimal inside;}
+ul li{list-style:disc inside;}
+
+/* -- Header ---------------------------------------------------------------- */
+header#header     {margin-bottom:40px;}
+header#header h1  {font-size:42px;margin-bottom:10px;font-family:Georgia, Serif;font-weight:normal;}
+header#header p   {color:#999;}
+
+/* -- Content --------------------------------------------------------------- */
+section#content{}
+
+section#content section article p{margin-bottom:10px;}
+
+section#content article{margin-bottom:40px;}
+section#content article header{overflow:hidden;}
+section#content article header h1{}
+section#content article header img{display:none;}
+section#content article header .meta{color:#999;font-size:12px;}
+
+/* -- Footer ---------------------------------------------------------------- */
+footer{margin-bottom:20px;}

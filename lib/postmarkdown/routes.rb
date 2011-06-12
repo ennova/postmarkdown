@@ -1,4 +1,6 @@
 class ActionDispatch::Routing::Mapper
+  require File.expand_path(File.dirname(__FILE__) + '/util')
+
   def postmarkdown(options = {})
     options.reverse_merge!({ :as => :posts, :permalink_format => :day })
 
@@ -17,8 +19,7 @@ class ActionDispatch::Routing::Mapper
   end
 
   def postmarkdown_feed_title(path)
-    app_name = Rails.application.class.name.split("::")[0..-2].join.titleize
-    Postmarkdown::Config.options[:feed_title] ||= "#{app_name} #{path.to_s.tr('/', '_').humanize.titleize}"
+    Postmarkdown::Config.options[:feed_title] ||= "#{Postmarkdown::Util.app_name} #{path.to_s.tr('/', '_').humanize.titleize}"
   end
 
   def raise_postmarkdown_permalink_error

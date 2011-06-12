@@ -151,4 +151,17 @@ describe 'Post views', :type => :request do
       end.should raise_error(ActiveRecord::RecordNotFound)
     end
   end
+
+  context 'theme' do
+    it 'should not use the built-in layout by default' do
+      visit posts_path
+      page.should_not have_content('A postmarkdown blog')
+    end
+
+    it 'should use the built-in layout when the global option is set' do
+      Postmarkdown::Config.options[:use_theme] = true
+      visit posts_path
+      page.should have_content('A postmarkdown blog')
+    end
+  end
 end

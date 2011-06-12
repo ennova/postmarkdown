@@ -59,6 +59,12 @@ To customize the feed title, add the following to an initializer:
 
 To link to the feed in your app, simply use the route helper: `<%= link_to 'RSS Feed', posts_feed_path %>`
 
+## Built-in Theme
+
+Postmarkdown comes with minimal built-in theme for your convenience. To turn on the theme, add the following to an initializer:
+
+    Postmarkdown::Config.options[:use_theme] = true
+
 ## Customizing Routes
 
 By default Postmarkdown will setup all routes to go through the `/posts/*` path. For example:

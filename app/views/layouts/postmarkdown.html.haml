@@ -1,0 +1,16 @@
+!!! 5
+%html
+  %head
+    %title= Postmarkdown::Util.app_name
+    = stylesheet_link_tag 'postmarkdown/postmarkdown'
+    = yield :head
+  %body
+    %header#header
+      %h1= link_to Postmarkdown::Util.app_name, '/'
+      %p
+        A postmarkdown blog
+        - if Post.last.try(:author)
+          = "by #{Post.last.author}"
+    %section#content= yield
+    %footer
+      %small= "Copyright &copy; #{Date.today.year}".html_safe
