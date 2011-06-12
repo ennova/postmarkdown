@@ -74,7 +74,7 @@ To link to the feed in your app, simply use the route helper: `<%= link_to 'RSS 
 
 ## Built-in Theme
 
-Postmarkdown comes with minimal built-in theme for your convenience. To turn on the theme, add the following to an initializer:
+Postmarkdown comes with minimal built-in theme for your convenience. To turn on the theme, add the following to an initializer (`config/initializers/postmarkdown.rb`):
 
     Postmarkdown::Config.options[:use_theme] = true
 
