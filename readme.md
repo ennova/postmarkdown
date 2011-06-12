@@ -4,6 +4,17 @@ A simple Rails blog engine powered by markdown.
 
 Postmarkdown is compatible with Rails 3 only and the gem is (soon to be) hosted on [RubyGems.org](http://rubygems.org).
 
+## Features
+
+* Markdown files for blog posts
+* No database
+* RSS Feed
+* Customizable Routes
+* Built-in minimal theme (optional)
+* HTML5
+* Rails engine (so you can override models, views, controllers, etc)
+* Easily customized
+
 ## Installation
 
 Simply add Postmarkdown to your Gemfile and bundle it up:
@@ -121,10 +132,8 @@ What about mapping Postmarkdown to root? We got you covered:
 
 ## TODO
 
-* Redcarpet (and syntax highlighting)
-* Better comments in generated routes
-* Code comments (RDoc quality)
-* Pagination? Use a gem or basic custom solution? Support will\_paginate if possible, otherwise custom solution using the config module.
+* Syntax highlighting for code blocks
+* Generated routes should show example usage
 * Support more file formats, eg. textile
 
 ## License
