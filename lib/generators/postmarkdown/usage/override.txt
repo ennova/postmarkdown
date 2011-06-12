@@ -5,3 +5,4 @@ Examples:
   $ rails generate postmarkdown:override --controller # overrides file `app/controllers/posts_controller.rb`
   $ rails generate postmarkdown:override --model      # overrides file `app/models/post.rb`
   $ rails generate postmarkdown:override --views      # overrides all files in directory `app/views/posts/`
+  $ rails generate postmarkdown:override --theme      # overrides the layout and stylesheet
