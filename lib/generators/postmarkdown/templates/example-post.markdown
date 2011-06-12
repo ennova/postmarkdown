@@ -1,5 +1,5 @@
 ---
-title: Example Post
+title: <%= slug.underscore.humanize %>
 <%- if author = Postmarkdown::Util.git_config('user.name') -%>
 author: <%= author %>
 <%- end -%>
