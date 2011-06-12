@@ -6,9 +6,10 @@ module Postmarkdown
     class_option :views,      :type => :boolean, :group => :override, :desc => 'Override all Post views'
     class_option :model,      :type => :boolean, :group => :override, :desc => 'Override the Post model'
     class_option :controller, :type => :boolean, :group => :override, :desc => 'Override the Posts controller'
+    class_option :theme,      :type => :boolean, :group => :override, :desc => 'Override the layout and stylesheet'
 
     def check_class_options
-      if options.views.blank? && options.model.blank? && options.controller.blank?
+      if options.views.blank? && options.model.blank? && options.controller.blank? && options.theme.blank?
         exec 'rails g postmarkdown:override --help'
         exit
       end
@@ -29,6 +30,13 @@ module Postmarkdown
     def override_controller
       if options.controller
         copy_file 'controllers/posts_controller.rb', 'app/controllers/posts_controller.rb'
+      end
+    end
+
+    def override_theme
+      if options.theme
+        directory 'views/layouts', 'views/layouts'
+        directory '../public/stylesheets', 'public/stylesheets'
       end
     end
   end

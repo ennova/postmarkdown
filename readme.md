@@ -52,6 +52,7 @@ The easiest way to customize the Postmarkdown functionality or appearance is by 
     $ rails generate postmarkdown:override --controller # overrides `app/controllers/posts_controller.rb`
     $ rails generate postmarkdown:override --model      # overrides `app/models/post.rb`
     $ rails generate postmarkdown:override --views      # overrides all files in directory `app/views/posts/`
+    $ rails generate postmarkdown:override --theme      # overrides the layout and stylesheet
 
 ## RSS Feed
 
