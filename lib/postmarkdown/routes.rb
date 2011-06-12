@@ -1,5 +1,5 @@
 class ActionDispatch::Routing::Mapper
-  require File.expand_path(File.dirname(__FILE__) + '/util')
+  require 'postmarkdown/util'
 
   def postmarkdown(options = {})
     options.reverse_merge!({ :as => :posts, :permalink_format => :day })
