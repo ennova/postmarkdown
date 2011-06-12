@@ -1,13 +1,5 @@
 TODO
 ----
-[x] RSpec acceptance test for pre code blocks (= vs ~)
-[x] RSpec tests for the xml feed
-[x] 404 for missing post or invalid slug
-[x] Add post author to feed
-[x] Better example post
-[x] Generator automagically figures out who the author is based on git config
-[x] Default theme
-[x] Config option for using built-in theme
 [ ] Pagination
 
 DONE
@@ -21,3 +13,11 @@ DONE
 [x] RSpec model tests for author and email</del>
 [x] Set default feed title to app name + route path</del>
   [x] For example, `TestApp::Application` with the route `postmarkdown :as => :awesome_blog` would generate the feed title would be 'Test App Awesome Blog'</del>
+[x] RSpec acceptance test for pre code blocks (= vs ~)
+[x] RSpec tests for the xml feed
+[x] 404 for missing post or invalid slug
+[x] Add post author to feed
+[x] Better example post
+[x] Generator automagically figures out who the author is based on git config
+[x] Default theme
+[x] Config option for using built-in theme
