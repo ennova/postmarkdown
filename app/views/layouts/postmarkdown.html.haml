@@ -8,7 +8,7 @@
     %header#header
       %h1= link_to Postmarkdown::Util.app_name, '/'
       %p
-        A postmarkdown blog
+        A #{link_to 'postmarkdown', 'https://github.com/getencode/postmarkdown'} blog
         - if Post.last.try(:author)
           = "by #{Post.last.author}"
     %section#content= yield
