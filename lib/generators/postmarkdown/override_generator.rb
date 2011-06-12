@@ -3,7 +3,7 @@ module Postmarkdown
     desc File.read(File.expand_path('../usage/override.txt', __FILE__))
     source_root File.expand_path('../../../../app', __FILE__)
 
-    class_option :views,      :type => :boolean, :group => :override, :desc => 'Override all Post views'
+    class_option :views,      :type => :boolean, :group => :override, :desc => 'Override the Post views'
     class_option :model,      :type => :boolean, :group => :override, :desc => 'Override the Post model'
     class_option :controller, :type => :boolean, :group => :override, :desc => 'Override the Posts controller'
     class_option :theme,      :type => :boolean, :group => :override, :desc => 'Override the layout and stylesheet'
