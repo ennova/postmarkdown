@@ -1,6 +1,6 @@
 # Postmarkdown
 
-A simple Rails blog engine powered by markdown.
+A simple Rails blog engine powered by Markdown.
 
 Postmarkdown is compatible with Rails 3 only and the gem is (soon to be) hosted on [RubyGems.org](http://rubygems.org).
 
