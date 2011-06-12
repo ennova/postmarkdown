@@ -6,12 +6,9 @@ TODO
 [x] Add post author to feed
 [x] Better example post
 [x] Generator automagically figures out who the author is based on git config
-[ ] Test compatibility of `will_paginate` and other pagination gems
-[ ] Default theme
-[ ] Option to generate erb files instead of haml
-[ ] Config option for using built-in theme
-[ ] Generator for using theme initializer
-[ ] Generator for overriding layout
+[x] Default theme
+[x] Config option for using built-in theme
+[ ] Pagination
 
 DONE
 ----
