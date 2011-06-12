@@ -2,6 +2,7 @@ Description:
   This generator will override either the Post model, controller or views.
 
 Examples:
+  $ rails generate postmarkdown:override --all        # overrides all of the things
   $ rails generate postmarkdown:override --controller # overrides file `app/controllers/posts_controller.rb`
   $ rails generate postmarkdown:override --model      # overrides file `app/models/post.rb`
   $ rails generate postmarkdown:override --views      # overrides all files in directory `app/views/posts/`
