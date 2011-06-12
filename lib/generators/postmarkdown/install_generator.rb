@@ -10,7 +10,7 @@ module Postmarkdown
 
     def generate_example_post
       unless options.skip_example?
-        copy_file 'example-post.markdown', "app/posts/#{Time.now.strftime('%Y-%m-%d')}-example-post.markdown"
+        template 'example-post.markdown', "app/posts/#{Time.now.strftime('%Y-%m-%d')}-example-post.markdown"
       end
     end
 
