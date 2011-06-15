@@ -1,6 +1,8 @@
 TODO
 ----
 [ ] Pagination
+[ ] Built-in theme should have a link to the RSS Feed
+[ ] Generator tests
 
 DONE
 ----
