@@ -9,9 +9,7 @@ module Postmarkdown
     end
 
     def generate_example_post
-      unless options.skip_example?
-        template 'example-post.markdown', "app/posts/#{Time.now.strftime('%Y-%m-%d')}-example-post.markdown"
-      end
+      generate 'postmarkdown:post', 'example-post' unless options.skip_example?
     end
 
     def add_routes
