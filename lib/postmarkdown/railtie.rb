@@ -6,7 +6,7 @@ module Postmarkdown
         :urls => ['/stylesheets/postmarkdown'],
         :root => "#{postmarkdown_root}/public"
       )
-      ActionController::Base.prepend_view_path("#{postmarkdown_root}/app/views")
+      ActionController::Base.append_view_path("#{postmarkdown_root}/app/views")
     end
 
     private
