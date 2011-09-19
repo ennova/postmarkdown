@@ -6,12 +6,12 @@ Gem::Specification.new do |s|
   s.name        = 'postmarkdown'
   s.version     = Postmarkdown::VERSION
   s.platform    = Gem::Platform::RUBY
-  s.authors     = ['Jason Weathered', 'Nathanael Kane',  'Odin Dutton', 'Adrian Smith']
-  s.email       = ['jason.weathered@ennova.com.au', 'nate.kane@ennova.com.au', 'odin.dutton@ennova.com.au', 'adrian.smith@ennova.com.au']
+  s.authors     = ['Jason Weathered', 'Nathanael Kane',  'Odin Dutton', 'Adrian Smith', 'Ivan Vanderbyl']
+  s.email       = ['jason.weathered@ennova.com.au', 'nate.kane@ennova.com.au', 'odin.dutton@ennova.com.au', 'adrian.smith@ennova.com.au', 'ivan@testpilot.me']
   s.licenses    = ['MIT']
 
   s.homepage    = ''
-  s.summary     = %q{A simple Rails blog engine powered by markdown.}
+  s.summary     = %q{A drop-in, Markdown powered blog engine for Rails 3.1}
   s.description = s.summary
 
   s.rubyforge_project = 'postmarkdown'
@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib', 'public']
 
-  s.add_dependency 'rails', '~> 3.0'
+  s.add_dependency 'rails', '>= 3.1.0'
   s.add_dependency 'haml', '~> 3.1'
   s.add_dependency 'gravtastic'
   s.add_dependency 'nokogiri'
