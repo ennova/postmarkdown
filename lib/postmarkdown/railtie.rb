@@ -2,7 +2,6 @@ module Postmarkdown
   class Railtie < Rails::Railtie
     initializer :before_initialize do
       unless Rails.application.config.respond_to?(:assets) && Rails.application.config.assets.enabled
-        puts 'hai'
         require 'rack'
         Rails.configuration.middleware.insert_before('Rack::Sendfile', 'Rack::Static',
           :urls => ['/stylesheets/postmarkdown'],
