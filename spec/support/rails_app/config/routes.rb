@@ -1,3 +1,1 @@
-RailsApp::Application.routes.draw do
-  postmarkdown
-end
+../../../internal/config/routes.rb
