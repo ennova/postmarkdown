@@ -1,3 +1,5 @@
+require 'active_record/errors'
+
 class Post
   extend ActiveModel::Naming
 
