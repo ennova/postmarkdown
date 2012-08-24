@@ -4,3 +4,4 @@ gemfiles/*.gemfile.lock
 db/*.sqlite3
 log/*.log
 tmp/
+pkg/
