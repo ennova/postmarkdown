@@ -5,6 +5,7 @@ module Postmarkdown
   require 'rdiscount'
   require 'nokogiri'
   require 'haml'
+  require 'kaminari'
 
   class Engine < Rails::Engine
   end

@@ -21,7 +21,17 @@ class PostsController < ApplicationController
   helper_method :resource
 
   def collection
-    @collection ||= Post.where(params.slice(:year, :month, :day))
+    @collection ||= begin
+      posts = Post.where(params.slice(:year, :month, :day))
+      posts = Kaminari.paginate_array(posts).page(params[:page]).per(posts_per_page)
+      posts
+    end
   end
   helper_method :collection
+
+  private
+
+  def posts_per_page
+    params[:count] || Postmarkdown::Config.options[:posts_per_page]
+  end
 end

@@ -45,6 +45,31 @@ describe 'Post views', :type => :request do
         all('section#posts article.post').size.should == 4
       end
     end
+
+    describe 'pagination' do
+      def article_titles
+        all('article header h1').map(&:text)
+      end
+
+      before do
+        visit posts_path(:count => 2)
+      end
+
+      it 'returns the latest posts on the first page' do
+        article_titles.should eq [
+          'Post with full metadata',
+          'A Test Post',
+        ]
+      end
+
+      it 'returns earlier posts on the second page' do
+        click_link 'Next'
+        article_titles.should eq [
+          'Image',
+          'First Post',
+        ]
+      end
+    end
   end
 
   context 'Posts#index with no posts' do

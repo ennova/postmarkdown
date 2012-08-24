@@ -11,6 +11,8 @@ Postmarkdown::Config.options[:feed_title] = nil
 
 Postmarkdown::Config.options[:permalink_format] = :day
 
+Postmarkdown::Config.options[:posts_per_page] = 5
+
 Postmarkdown::Config.options[:use_theme] = false
 
 Postmarkdown::Config.options[:permalink_regex] = {}
