@@ -138,6 +138,14 @@ What about mapping Postmarkdown to root? We got you covered:
 * Generated routes should show example usage
 * Support more file formats, eg. textile
 
+## Development
+
+```
+bundle
+rake appraisal:install
+rake # run the tests
+```
+
 ## License
 
 MIT License. Copyright 2011 Ennova.
