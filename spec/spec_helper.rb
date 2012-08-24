@@ -24,3 +24,5 @@ RSpec.configure do |config|
   config.mock_with :rspec
   config.include Delorean
 end
+
+ActiveSupport::Deprecation.debug = true
