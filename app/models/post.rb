@@ -2,6 +2,7 @@ require 'active_record/errors'
 
 class Post
   extend ActiveModel::Naming
+  include ActiveModel::Conversion
 
   include Gravtastic
   is_gravtastic
