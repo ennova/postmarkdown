@@ -137,6 +137,9 @@ What about mapping Postmarkdown to root? We got you covered:
 * Syntax highlighting for code blocks
 * Generated routes should show example usage
 * Support more file formats, eg. textile
+* Pagination
+* Built-in theme should have a link to the RSS Feed
+* Generator tests
 
 ## Development
 
