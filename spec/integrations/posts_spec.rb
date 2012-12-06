@@ -180,15 +180,25 @@ describe 'Post views', :type => :request do
   end
 
   context 'theme' do
-    it 'should not use the built-in layout by default' do
+    before { @original_layout = Postmarkdown::Config.options[:layout] }
+    after { Postmarkdown::Config.options[:layout] = @original_layout }
+
+    it 'should use the application layout by default' do
       visit posts_path
       page.should_not have_content('A postmarkdown blog')
     end
 
-    it 'should use the built-in layout when the global option is set' do
+    it 'should use the postmarkdown layout when using theme' do
       Postmarkdown::Config.options[:use_theme] = true
       visit posts_path
       page.should have_content('A postmarkdown blog')
+      Postmarkdown::Config.options[:use_theme] = false
+    end
+
+    it 'should use the built-in layout when the global option is set to true' do
+      Postmarkdown::Config.options[:layout] = 'custom_layout'
+      visit posts_path
+      page.should have_content('A custom layout')
     end
   end
 end
