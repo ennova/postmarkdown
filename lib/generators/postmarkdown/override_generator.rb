@@ -36,7 +36,7 @@ module Postmarkdown
 
     def override_theme
       if options.theme || options.all
-        directory 'views/layouts', 'views/layouts'
+        directory 'views/layouts', 'app/views/layouts'
         if Rails.application.config.respond_to?(:assets) && Rails.application.config.assets.enabled
           directory '../vendor/assets/stylesheets', 'app/assets/stylesheets'
         else
