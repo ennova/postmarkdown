@@ -78,6 +78,12 @@ Postmarkdown comes with minimal built-in theme for your convenience. To turn on 
 
     Postmarkdown::Config.options[:use_theme] = true
 
+## Customizing the layout
+
+By default, Postmarkdown will use your application's default layout, but if you wish to use a specific custom layout, you can set the following configuration in an initializer, as above:
+
+    Postmarkdown::Config.options[:layout] = 'layout_name'
+
 ## Customizing Routes
 
 By default Postmarkdown will setup all routes to go through the `/posts/*` path. For example:
