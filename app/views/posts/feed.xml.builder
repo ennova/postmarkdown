@@ -22,7 +22,7 @@ xml.feed :xmlns => 'http://www.w3.org/2005/Atom' do
 
       xml.id post_url(post)
       xml.content :type => :html, 'xml:base' => post_url(post) do
-        xml.cdata! post.content_html
+        xml.cdata! post_content_html(post)
       end
     end
   end

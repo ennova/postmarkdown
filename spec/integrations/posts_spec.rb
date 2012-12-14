@@ -141,6 +141,10 @@ describe 'Post views', :type => :request do
     it 'should preserve whitespace on code blocks' do
       page.source.should match '<pre><code>First line of code.&#x000A;  Second line of code.&#x000A;</code></pre>'
     end
+
+    it 'should allow calling Rails helpers via ERB tags' do
+      page.source.should match('<p>Paragraph created by Rails helper</p>')
+    end
   end
 
   context 'Posts#feed' do

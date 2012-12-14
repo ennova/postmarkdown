@@ -22,12 +22,6 @@ describe Post do
     its(:date) { should == Date.parse('2011-04-01') }
     its(:title) { should == 'First Post' }
     its(:content) { should =~ /\ALorem ipsum/ }
-    its(:content_html) { should =~ /^<p>Lorem ipsum/ }
-    its(:content_html) { should =~ /^<p>Duis aute irure dolor/ }
-    its(:content_html) { should be_html_safe }
-    its(:summary_html) { should =~ /^<p>Lorem ipsum/ }
-    its(:summary_html) { should_not =~ /^<p>Duis aute irure dolor/ }
-    its(:summary_html) { should be_html_safe }
   end
 
   context 'with custom title post' do
@@ -44,16 +38,9 @@ describe Post do
     its(:email) { should == 'john.smith@example.com' }
   end
 
-  context 'with image post' do
-    subject { test_post '2011-04-28-image.markdown' }
-    its(:summary_html) { should =~ /^<p>Image description/ }
-    its(:summary_html) { should be_html_safe }
-  end
-
   context 'with custom summary post' do
     subject { test_post '2011-04-28-summary.markdown' }
-    its(:summary_html) { should == '<p>This is a custom &amp; test summary.</p>' }
-    its(:summary_html) { should be_html_safe }
+    its(:summary) { should == 'This is a custom & test summary.' }
   end
 
   context 'with alternate markdown file extension' do
