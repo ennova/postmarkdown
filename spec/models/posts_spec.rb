@@ -16,6 +16,10 @@ describe Post do
     end
   end
 
+  it 'should return the correct directory' do
+    Post.directory.should == Rails.root.join('app', 'posts')
+  end
+
   context 'with first post' do
     subject { test_post '2011-04-01-first-post.markdown' }
     its(:slug) { should == 'first-post' }
@@ -34,6 +38,14 @@ describe Post do
     subject { test_post '2015-02-13-custom-title.markdown' }
     its(:slug) { should == 'custom-title' }
     its(:date) { should == Date.parse('2015-02-13') }
+    its(:title) { should == 'This is a custom title' }
+    its(:content) { should == "Content goes here.\n" }
+  end
+
+  context 'with a custom title that also and including timestamp' do
+    subject { test_post '2012-02-13-102030-custom-title-and-timestamp.markdown' }
+    its(:slug) { should == 'custom-title-and-timestamp' }
+    its(:date) { should == Time.utc(2012, 02, 13, 10, 20, 30).to_date }
     its(:title) { should == 'This is a custom title' }
     its(:content) { should == "Content goes here.\n" }
   end

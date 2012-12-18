@@ -6,14 +6,14 @@ module Postmarkdown
     class_option :date, :type => :string, :group => :runtime, :desc => 'Publish date for the post'
 
     def check_slug
-      unless slug =~ /^[A-Za-z0-9\-]+$/
+      unless slug =~ /^#{Post::SLUG_FORMAT}$/
         puts 'Invalid slug - valid characters include letters, digits and dashes.'
         exit
       end
     end
 
     def check_date
-      if options.date && options.date !~ /^\d{4}-\d{2}-\d{2}$/
+      if options.date && options.date !~ /^#{Post::DATE_FORMAT}$/
         puts 'Invalid date - please use the following format: YYYY-MM-DD, eg. 2011-01-01.'
         exit
       end
@@ -26,8 +26,17 @@ module Postmarkdown
     private
 
     def publish_date
-      date = options.date.present? ? Time.zone.parse(options.date) : Time.zone.now
-      date.strftime('%Y-%m-%d')
+      format = '%Y-%m-%d-%H%M%S'
+
+      if options.date.present?
+        date_string = options.date
+        date_string += '-000000' unless options.date.match(/(#{Post::TIME_FORMAT}$)/)
+        date = DateTime.strptime(date_string, format)
+      else
+        date = Time.zone.now
+      end
+
+      date.strftime(format)
     end
   end
 end
