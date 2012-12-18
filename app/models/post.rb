@@ -9,11 +9,16 @@ class Post
 
   attr_reader :slug
 
-  FILENAME_FORMAT = /^(\d+-\d+-\d+)-(.*)(\.[^.]+)$/
+  TIME_FORMAT = /-\d{6}/
+  DATE_FORMAT = /\d{4}-\d{2}-\d{2}(#{TIME_FORMAT})?/
+  SLUG_FORMAT = /[A-Za-z0-9\-]+/
+  EXTENSION_FORMAT = /\.[^.]+/
+
+  FILENAME_FORMAT = /^(#{DATE_FORMAT})-(#{SLUG_FORMAT})(#{EXTENSION_FORMAT})$/
 
   def initialize(path)
     @path = path
-    @date_str, @slug = File.basename(path).match(FILENAME_FORMAT).captures
+    @date_str, _, @slug = File.basename(path).match(FILENAME_FORMAT).captures
   end
 
   def to_param
@@ -98,9 +103,13 @@ class Post
   class << self
     def all
       file_extensions = Postmarkdown::Config.options[:markdown_file_extensions].join(',')
-      @@posts ||= Dir.glob(Rails.root + "app/posts/*.{#{file_extensions}}").map do |filename|
+      @@posts ||= Dir.glob("#{directory}/*.{#{file_extensions}}").map do |filename|
         Post.new filename
       end.select(&:visible?).sort_by(&:date).reverse
+    end
+
+    def directory
+      Rails.root.join('app', 'posts')
     end
 
     def where(conditions = {})
