@@ -31,7 +31,7 @@ module Postmarkdown
       if options.date.present?
         date_string = options.date
         date_string += '-000000' unless options.date.match(/(#{Post::TIME_FORMAT}$)/)
-        date = DateTime.strptime(date_string, format)
+        date = Time.strptime(date_string, format)
       else
         date = Time.zone.now
       end
