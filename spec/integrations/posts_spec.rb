@@ -189,10 +189,12 @@ describe 'Post views', :type => :request do
     end
 
     it 'should use the postmarkdown layout when using theme' do
-      Postmarkdown::Config.options[:use_theme] = true
-      visit posts_path
-      page.should have_content('A postmarkdown blog')
-      Postmarkdown::Config.options[:use_theme] = false
+      ActiveSupport::Deprecation.silence do
+        Postmarkdown::Config.options[:use_theme] = true
+        visit posts_path
+        page.should have_content('A postmarkdown blog')
+        Postmarkdown::Config.options[:use_theme] = false
+      end
     end
 
     it 'should use the built-in layout when the global option is set to true' do

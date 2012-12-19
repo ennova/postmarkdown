@@ -37,6 +37,7 @@ class PostsController < ApplicationController
 
   def choose_layout
     if Postmarkdown::Config.options[:use_theme]
+      ActiveSupport::Deprecation.warn "`Postmarkdown::Config.options[:use_theme]` is deprecated. Use `Postmarkdown::Config.options[:layout] = 'postmarkdown'` instead."
       'postmarkdown'
     else
       Postmarkdown::Config.options[:layout]
