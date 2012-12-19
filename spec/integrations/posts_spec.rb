@@ -189,6 +189,7 @@ describe 'Post views', :type => :request do
       Postmarkdown::Config.options[:use_theme] = true
       visit posts_path
       page.should have_content('A postmarkdown blog')
+      Postmarkdown::Config.options[:use_theme] = false
     end
   end
 end
