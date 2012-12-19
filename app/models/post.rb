@@ -52,6 +52,10 @@ class Post
     metadata[:title] || slug.titleize
   end
 
+  def summary
+    metadata[:summary]
+  end
+
   def author
     metadata[:author]
   end
@@ -77,27 +81,6 @@ class Post
 
   def to_s
     "#{title.inspect} (#{slug})"
-  end
-
-  def content_html
-    RDiscount.new(content).to_html.html_safe
-  end
-
-  class Sanitizer < HTML::WhiteListSanitizer
-    self.allowed_tags -= %w(img a)
-  end
-
-  TagHelper = Class.new.extend ActionView::Helpers::TagHelper
-
-  def summary_html
-    if metadata[:summary].present?
-      TagHelper.content_tag :p, metadata[:summary]
-    else
-      html = Sanitizer.new.sanitize(content_html)
-      doc = Nokogiri::HTML.fragment(html)
-      para = doc.search('p').detect { |p| p.text.present? }
-      para.try(:to_html).try(:html_safe)
-    end
   end
 
   class << self

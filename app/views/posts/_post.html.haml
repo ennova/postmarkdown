@@ -10,7 +10,7 @@
         by
         = post.author
   - if summary
-    = post.summary_html
+    = post_summary_html post
     %p.more= link_to 'Read more&hellip;'.html_safe, post
   - else
-    ~ post.content_html
+    ~ post_content_html post
