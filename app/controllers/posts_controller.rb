@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  layout lambda { |controller| Postmarkdown::Config.options[:use_theme] ? 'postmarkdown' : 'application' }
+  layout :choose_layout
 
   def show
     resource
@@ -33,5 +33,14 @@ class PostsController < ApplicationController
 
   def posts_per_page
     params[:count] || Postmarkdown::Config.options[:posts_per_page]
+  end
+
+  def choose_layout
+    if Postmarkdown::Config.options[:use_theme]
+      ActiveSupport::Deprecation.warn "`Postmarkdown::Config.options[:use_theme]` is deprecated. Use `Postmarkdown::Config.options[:layout] = 'postmarkdown'` instead."
+      'postmarkdown'
+    else
+      Postmarkdown::Config.options[:layout]
+    end
   end
 end
