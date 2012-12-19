@@ -31,7 +31,6 @@ module Postmarkdown
 
     context 'with the slug and date parameters' do
       it 'creates a file for the slug and the given date' do
-        puts 'ran generator'
         run_generator %w(other-post --date=2012-01-02)
 
         Dir.glob('tmp/app/posts/*').should == ['tmp/app/posts/2012-01-02-000000-other-post.markdown']
@@ -47,7 +46,6 @@ module Postmarkdown
 
     context 'with the slug, date and time parameters' do
       it 'creates a file for the slug and the given date' do
-        puts 'ran generator'
         run_generator %w(other-post --date=2012-01-02-102030)
 
         Dir.glob('tmp/app/posts/*').should == ['tmp/app/posts/2012-01-02-102030-other-post.markdown']
