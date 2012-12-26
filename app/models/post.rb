@@ -11,7 +11,7 @@ class Post
 
   TIME_FORMAT = /-\d{6}/
   DATE_FORMAT = /\d{4}-\d{2}-\d{2}(#{TIME_FORMAT})?/
-  SLUG_FORMAT = /[A-Za-z0-9\-]+/
+  SLUG_FORMAT = /[A-Za-z0-9_\-]+/
   EXTENSION_FORMAT = /\.[^.]+/
 
   FILENAME_FORMAT = /^(#{DATE_FORMAT})-(#{SLUG_FORMAT})(#{EXTENSION_FORMAT})$/
