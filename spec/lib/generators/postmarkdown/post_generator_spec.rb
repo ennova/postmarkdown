@@ -29,6 +29,23 @@ module Postmarkdown
       end
     end
 
+    context 'with the slug parameter including an underscore' do
+      it 'creates the correct file and sets the right values' do
+        Timecop.freeze(Time.utc(2012, 1, 1, 10, 20, 30)) do
+          run_generator %w(test-post_with_underscores)
+
+          Dir.glob('tmp/app/posts/*').should == ['tmp/app/posts/2012-01-01-102030-test-post_with_underscores.markdown']
+
+          Post.all.count.should == 1
+
+          post = Post.first
+          post.slug.should == 'test-post_with_underscores'
+          post.date.should == Date.parse('2012-01-01')
+          post.title.should == 'Test post_with_underscores'
+        end
+      end
+    end
+
     context 'with the slug and date parameters' do
       it 'creates a file for the slug and the given date' do
         run_generator %w(other-post --date=2012-01-02)
