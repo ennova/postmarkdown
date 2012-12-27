@@ -1,5 +1,5 @@
 ---
-title: <%= slug.underscore.humanize %>
+title: <%= slug.gsub('-',' ').capitalize %>
 <%- if author = Postmarkdown::Util.git_config('user.name') -%>
 author: <%= author %>
 <%- end -%>

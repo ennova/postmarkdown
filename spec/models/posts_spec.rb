@@ -44,6 +44,11 @@ describe Post do
     its(:content) { should == "Content goes here.\n" }
   end
 
+  context 'with a slug containing underscores' do
+    subject { test_post '2012-02-12-102030-slug_containing_underscores.markdown' }
+    its(:slug) { should == 'slug_containing_underscores' }
+  end
+
   context 'with author' do
     subject { test_post '2011-05-01-full-metadata.markdown' }
     its(:author) { should == 'John Smith' }
