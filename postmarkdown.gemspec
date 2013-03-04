@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.require_paths = ['lib', 'public']
 
   s.add_dependency 'rails', '~> 3.0'
-  s.add_dependency 'haml', '~> 3.1'
+  s.add_dependency 'haml', '>= 3'
   s.add_dependency 'gravtastic'
   s.add_dependency 'nokogiri'
   s.add_dependency 'rdiscount'
