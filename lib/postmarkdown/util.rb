@@ -5,8 +5,8 @@ module Postmarkdown
     end
 
     def self.git_config(name)
-      value = `git config --get #{name}`.chomp
-      value if $?.success?
+      value = `git config --get #{name}`
+      value.chomp if $?.success?
     end
   end
 end
