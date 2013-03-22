@@ -2,7 +2,6 @@
 
 source "http://rubygems.org"
 
-gem "ruby-debug19", :require=>false
 gem "timecop", :require=>false
 gem "generator_spec", :require=>false
 gem "rails", "~> 3.2.0"
