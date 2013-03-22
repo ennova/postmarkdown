@@ -95,5 +95,17 @@ module Postmarkdown
         Dir['app/posts/*'].should be_empty
       end
     end
+
+    it 'does not error if git is unavailable' do
+      begin
+        old_path = ENV['PATH']
+        ENV['PATH'] = ''
+        expect {
+          run_generator %w(test)
+        }.to_not raise_error
+      ensure
+        ENV['PATH'] = old_path
+      end
+    end
   end
 end
