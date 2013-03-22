@@ -1,1 +1,0 @@
-../../../internal/config/routes.rb

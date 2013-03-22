@@ -6,13 +6,8 @@ Bundler.setup :default, :development
 
 require 'postmarkdown'
 
-require 'rails/version'
-if Rails::VERSION::MAJOR == 3 && Rails::VERSION::MINOR == 0
-  require 'support/rails_app/config/environment'
-else
-  require 'combustion'
-  Combustion.initialize!
-end
+require 'combustion'
+Combustion.initialize!
 
 require 'capybara/rspec'
 require 'rspec/rails'
