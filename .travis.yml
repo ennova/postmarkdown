@@ -1,0 +1,9 @@
+language: "ruby"
+before_script:
+  - "bundle exec rake appraisal:install"
+script: "bundle exec rake appraisal spec"
+rvm:
+  - "1.9.3"
+notifications:
+  recipients:
+    - "dev+travis-ci@ennova.com.au"

@@ -4,6 +4,8 @@ A simple Rails blog engine powered by Markdown.
 
 Postmarkdown is compatible with Rails 3 only and the gem is hosted on [RubyGems.org](http://rubygems.org/gems/postmarkdown).
 
+[![Build Status](https://secure.travis-ci.org/ennova/postmarkdown.png?branch=master)](http://travis-ci.org/ennova/postmarkdown)
+
 ## Features
 
 * Markdown files for blog posts
