@@ -7,7 +7,7 @@ Bundler.setup :default, :development
 require 'postmarkdown'
 
 require 'combustion'
-Combustion.initialize!
+Combustion.initialize! :action_controller, :action_view, :sprockets
 
 require 'capybara/rspec'
 require 'rspec/rails'
