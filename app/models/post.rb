@@ -88,7 +88,7 @@ class Post
       file_extensions = Postmarkdown::Config.options[:markdown_file_extensions].join(',')
       @@posts ||= Dir.glob("#{directory}/*.{#{file_extensions}}").map do |filename|
         Post.new filename
-      end.select(&:visible?).sort_by(&:date).reverse
+      end.select(&:visible?).sort_by { |post| [post.date, post.slug] }.reverse
     end
 
     def directory
