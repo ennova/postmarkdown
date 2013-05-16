@@ -29,7 +29,12 @@ describe PostHelper do
 
     it 'renders HTML summary' do
       summary_html.should be_html_safe
-      summary_html.should =~ /^<p>Image description/
+      summary_html.should =~ /^<p><img src=\"example.png\">/
+    end
+
+    it 'renders HTML content' do
+      content_html.should be_html_safe
+      content_html.should =~ /^<p><img src="example.png" \/>/
     end
   end
 

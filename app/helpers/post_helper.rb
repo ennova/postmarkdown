@@ -1,6 +1,6 @@
 module PostHelper
   class Sanitizer < HTML::WhiteListSanitizer
-    self.allowed_tags -= %w(img a)
+    self.allowed_tags.merge(%w(img a))
   end
 
   def post_summary_html(post)
@@ -8,8 +8,9 @@ module PostHelper
       content_tag :p, post.summary
     else
       html = Sanitizer.new.sanitize(post_content_html(post))
+
       doc = Nokogiri::HTML.fragment(html)
-      para = doc.search('p').detect { |p| p.text.present? }
+      para = doc.search('p').detect { |p| p.text }
       para.try(:to_html).try(:html_safe)
     end
   end

@@ -27,7 +27,6 @@ describe 'Post views', :type => :request do
         # 2011-04-28-image
         page.should have_content('Image')                   # title
         page.should have_content('Posted on 28 April 2011') # publish date
-        page.should have_content('Image description.')      # summary
 
         # 2011-04-01-first-post
         page.should have_content('First Post')                 # title

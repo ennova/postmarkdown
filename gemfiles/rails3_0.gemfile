@@ -2,9 +2,9 @@
 
 source "http://rubygems.org"
 
-gem "ruby-debug19", :require=>false
 gem "timecop", :require=>false
 gem "generator_spec", :require=>false
+gem "debugger"
 gem "rails", "~> 3.0.0"
 
 gemspec :path=>"../"

@@ -5,4 +5,6 @@ summary: This is a custom & test summary.
 
 First paragraph of content.
 
+<!--more-->
+
 Second paragraph of content.
