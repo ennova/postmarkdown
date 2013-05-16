@@ -41,6 +41,14 @@ Here's an example of how to generate a new post using a slug and publish date:
 
 The above command will create the file `app/posts/2011-01-01-test-post.markdown`, which you can edit and add content to.
 
+### Creating a brief summary
+
+In their markdown, place the tag below, and everything above it will appear at the summary of your post.
+
+Tag:
+
+    <!--more-->
+
 ### View the Post
 
 Open `http://localhost:3000/posts` in your browser and you should be able to navigate to your new post. The URL for your new post is `http://localhost:3000/posts/2011/01/01/test-post`.
