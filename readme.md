@@ -49,6 +49,32 @@ Tag:
 
     <!--more-->
 
+### Post to categories
+
+Now, in version `0.1.0`, you can use categories in your post.
+
+To put your post in some categories, use:
+
+    categories:
+       - foo
+       - bar
+
+This is an Array of their categories in the post.
+
+To list all categories, use:
+
+    Post.categories_all
+
+This will return:
+
+    ["foo", "bar"]
+
+To do a search for a particular category, do:
+
+    Post.find_by_category ('foo')
+
+This will return your posts that have a category named `foo`.
+
 ### View the Post
 
 Open `http://localhost:3000/posts` in your browser and you should be able to navigate to your new post. The URL for your new post is `http://localhost:3000/posts/2011/01/01/test-post`.
