@@ -61,7 +61,6 @@ describe Post do
   end
 
   context "search per category" do
-    subject { test_post '2011-05-01-full-metadata.markdown' }
     it "should return one post per search by category 'full'" do
       posts = Post.find_by_category('full')
       posts.class.should == Array
