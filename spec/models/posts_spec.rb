@@ -74,6 +74,15 @@ describe Post do
     end
   end
 
+  context "all categories" do
+    it "should list all categories" do
+      categories = Post.categories_all
+      categories.class.should == Array
+      categories.should == ["full", "metadata"]
+    end
+
+  end
+
   context 'with custom summary post' do
     subject { test_post '2011-04-28-summary.markdown' }
     its(:summary) { should == 'This is a custom & test summary.' }

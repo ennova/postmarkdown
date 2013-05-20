@@ -102,6 +102,14 @@ class Post
       end
     end
 
+    def categories_all
+      categories = []
+      all.select do |post|
+        post.categories.each {|x| categories << x} unless post.categories.nil?
+      end
+      categories
+    end
+
     def directory
       Rails.root.join('app', 'posts')
     end
