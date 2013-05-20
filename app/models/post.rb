@@ -95,6 +95,13 @@ class Post
       end.select(&:visible?).sort_by(&:date).reverse
     end
 
+    def find_by_category(category=nil)
+      posts = []
+      all.select do |post|
+        posts << post if !post.categories.nil? and post.categories.include?(category)
+      end
+    end
+
     def directory
       Rails.root.join('app', 'posts')
     end

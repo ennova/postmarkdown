@@ -60,6 +60,20 @@ describe Post do
     its(:categories) { should == ['full', 'metadata']}
   end
 
+  context "search per category" do
+    subject { test_post '2011-05-01-full-metadata.markdown' }
+    it "should return one post per search by category 'full'" do
+      posts = Post.find_by_category('full')
+      posts.class.should == Array
+      posts.first.categories.include?('full').should be_true
+      posts.first.categories.include?('foobar').should be_false
+      posts.first.categories.should == ['full', 'metadata']
+      posts.first.class.should == Post
+      posts.first.author.should == 'John Smith'
+      posts.first.email.should == 'john.smith@example.com'
+    end
+  end
+
   context 'with custom summary post' do
     subject { test_post '2011-04-28-summary.markdown' }
     its(:summary) { should == 'This is a custom & test summary.' }
