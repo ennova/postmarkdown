@@ -55,6 +55,11 @@ describe Post do
     its(:email) { should == 'john.smith@example.com' }
   end
 
+  context "with categories" do
+    subject { test_post '2011-05-01-full-metadata.markdown' }
+    its(:categories) { should == ['full', 'metadata']}
+  end
+
   context 'with custom summary post' do
     subject { test_post '2011-04-28-summary.markdown' }
     its(:summary) { should == 'This is a custom & test summary.' }

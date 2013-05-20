@@ -64,6 +64,10 @@ class Post
     metadata[:email]
   end
 
+  def categories
+    metadata[:categories]
+  end
+
   def date
     @date ||= Time.zone.parse(metadata[:date] || @date_str).to_date
   end
