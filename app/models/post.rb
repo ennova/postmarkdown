@@ -18,7 +18,10 @@ class Post
 
   def initialize(path)
     @path = path
-    @date_str, @slug = File.basename(path).match(FILENAME_FORMAT).captures
+    @date_str, @slug = File.basename(path).match(FILENAME_FORMAT).try(:captures)
+    unless @date_str.present? && @slug.present?
+      raise "Invalid post filename: #{File.basename(path).inspect}"
+    end
   end
 
   def to_param

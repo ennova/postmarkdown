@@ -6,7 +6,9 @@ describe Post do
   end
 
   it 'should not initialise with bad filename' do
-    lambda { test_post 'missing-date-from-filename.markdown' }.should raise_error
+    lambda {
+      test_post 'missing-date-from-filename.markdown'
+    }.should raise_error 'Invalid post filename: "missing-date-from-filename.markdown"'
   end
 
   context 'with missing file' do
