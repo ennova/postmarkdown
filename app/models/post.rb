@@ -10,7 +10,7 @@ class Post
   attr_reader :slug
 
   TIME_FORMAT = /-\d{6}/
-  DATE_FORMAT = /\d{4}-\d{2}-\d{2}(#{TIME_FORMAT})?/
+  DATE_FORMAT = /\d{4}-\d{2}-\d{2}(?:#{TIME_FORMAT})?/
   SLUG_FORMAT = /[A-Za-z0-9_\-]+/
   EXTENSION_FORMAT = /\.[^.]+/
 
@@ -18,7 +18,7 @@ class Post
 
   def initialize(path)
     @path = path
-    @date_str, _, @slug = File.basename(path).match(FILENAME_FORMAT).captures
+    @date_str, @slug = File.basename(path).match(FILENAME_FORMAT).captures
   end
 
   def to_param
