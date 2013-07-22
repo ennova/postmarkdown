@@ -33,5 +33,5 @@ Gem::Specification.new do |s|
   s.add_development_dependency 'capybara', '~> 1.0.0.beta'
   s.add_development_dependency 'sqlite3'
   s.add_development_dependency 'delorean', '>= 0.2'
-  s.add_development_dependency 'combustion', '~> 0.3.1'
+  s.add_development_dependency 'combustion', '~> 0.4.0'
 end
