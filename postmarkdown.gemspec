@@ -21,7 +21,7 @@ Gem::Specification.new do |s|
   s.executables   = `git ls-files -- bin/*`.split("\n").map{ |f| File.basename(f) }
   s.require_paths = ['lib', 'public']
 
-  s.add_dependency 'rails', '~> 3.1'
+  s.add_dependency 'rails', ['>= 3.1', '< 5.0']
   s.add_dependency 'haml', ['>= 3.1', '< 5']
   s.add_dependency 'gravtastic'
   s.add_dependency 'nokogiri'
