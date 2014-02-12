@@ -8,6 +8,7 @@ require 'postmarkdown'
 
 require 'combustion'
 Combustion.initialize! :action_controller, :action_view, :sprockets
+require 'active_record/version'
 
 require 'capybara/rspec'
 require 'rspec/rails'
