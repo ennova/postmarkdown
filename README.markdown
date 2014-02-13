@@ -101,11 +101,11 @@ syntax highlight Ruby code:
     end
     ```
 
-This will add css classes to the html, but you still need to a
+This will add CSS classes to the HTML, but you still need to a
 stylesheet to visually highlight the code. Postmarkdown ships with a
-github like set of styles.
+GitHub-like set of styles.
 
-In your `app/assets/stylesheets/application.css`, include the css file:
+In your `app/assets/stylesheets/application.css`, include the CSS file:
 
 ```css
 /*
@@ -113,7 +113,7 @@ In your `app/assets/stylesheets/application.css`, include the css file:
  */
 ```
 
-Or if you're using scss:
+Or if you're using SCSS:
 
 ```scss
 @import "postmarkdown/syntax/github";
