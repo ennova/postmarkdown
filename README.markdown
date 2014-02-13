@@ -86,7 +86,7 @@ Postmarkdown comes with minimal built-in theme for your convenience.
 
     Postmarkdown::Config.options[:layout] = 'postmarkdown'
 
-## Syntax Highlighting 
+## Syntax Highlighting
 
 Postmarkdown will accept fenced code blocks so you can add syntax
 highlighting by adding an optional language identifier. For example, to
@@ -102,8 +102,8 @@ syntax highlight Ruby code:
     ```
 
 This will add css classes to the html, but you still need to a
-stylesheet to visually highlight the code.  Postmarkdown ships with a
-github like set of styles.  
+stylesheet to visually highlight the code. Postmarkdown ships with a
+github like set of styles.
 
 In your `app/assets/stylesheets/application.css`, include the css file:
 
@@ -120,7 +120,7 @@ Or if you're using scss:
 ```
 
 Postmarkdown adds styles to your code using the [rouge
-gem](https://github.com/jayferd/rouge).  Visit their github page or
+gem](https://github.com/jayferd/rouge). Visit their GitHub page or
 [this example page](http://rouge.jayferd.us/demo) for supported
 languages and styles.
 

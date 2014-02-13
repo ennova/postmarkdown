@@ -1,10 +1,9 @@
 require 'rouge/plugins/redcarpet'
 
 module Postmarkdown
-
   class MarkdownRenderer
     class HTMLWithRouge < Redcarpet::Render::HTML
-      include Rouge::Plugins::Redcarpet 
+      include Rouge::Plugins::Redcarpet
     end
 
     def initialize
