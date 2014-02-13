@@ -139,7 +139,14 @@ describe 'Post views', :type => :request do
     end
 
     it 'should preserve whitespace on code blocks' do
-      page.source.should match '<pre><code>First line of code.&#x000A;  Second line of code.&#x000A;</code></pre>'
+      code_block = Nokogiri::HTML(page.source).at('pre')
+      code_block.text.should eq "example = ->\n  alert 'Example'"
+    end
+
+    it 'should highlight code blocks' do
+      code_block = Nokogiri::HTML(page.source).at('pre')
+      span_classes = code_block.css('span').map { |span| span[:class] }
+      span_classes.should include 'nx', 'o', 's'
     end
 
     it 'should allow calling Rails helpers via ERB tags' do
