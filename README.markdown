@@ -88,8 +88,8 @@ Postmarkdown comes with minimal built-in theme for your convenience.
 
 ## Syntax Highlighting
 
-Postmarkdown will accept fenced code blocks so you can add syntax
-highlighting by adding an optional language identifier. For example, to
+Postmarkdown supports fenced code blocks which allows you to add syntax
+highlighting with an optional language identifier. For example, to
 syntax highlight Ruby code:
 
     ```ruby
@@ -119,10 +119,8 @@ Or if you're using SCSS:
 @import "postmarkdown/syntax/github";
 ```
 
-Postmarkdown adds styles to your code using the [rouge
-gem](https://github.com/jayferd/rouge). Visit their GitHub page or
-[this example page](http://rouge.jayferd.us/demo) for supported
-languages and styles.
+Postmarkdown adds highlighting to your code using [Rouge](https://github.com/jayferd/rouge).
+See the [demo page](http://rouge.jayferd.us/demo) for supported languages and styles.
 
 ## Customizing Routes
 
