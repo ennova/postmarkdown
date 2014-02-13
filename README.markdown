@@ -86,6 +86,42 @@ Postmarkdown comes with minimal built-in theme for your convenience.
 
     Postmarkdown::Config.options[:layout] = 'postmarkdown'
 
+## Syntax Highlighting
+
+Postmarkdown supports fenced code blocks which allows you to add syntax
+highlighting with an optional language identifier. For example, to
+syntax highlight Ruby code:
+
+    ```ruby
+    require 'some_gem'
+    class RubyClass
+      def some_method
+        puts "string"
+      end
+    end
+    ```
+
+This will add CSS classes to the HTML, but you still need to a
+stylesheet to visually highlight the code. Postmarkdown ships with a
+GitHub-like set of styles.
+
+In your `app/assets/stylesheets/application.css`, include the CSS file:
+
+```css
+/*
+ *= require postmarkdown/syntax/github
+ */
+```
+
+Or if you're using SCSS:
+
+```scss
+@import "postmarkdown/syntax/github";
+```
+
+Postmarkdown adds highlighting to your code using [Rouge](https://github.com/jayferd/rouge).
+See the [demo page](http://rouge.jayferd.us/demo) for supported languages and styles.
+
 ## Customizing Routes
 
 By default Postmarkdown will setup all routes to go through the `/posts/*` path. For example:
