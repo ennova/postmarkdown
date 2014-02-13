@@ -15,6 +15,6 @@ module PostHelper
   end
 
   def post_content_html(post)
-    Postmarkdown::MarkdownRenderer.new.render(post.content).html_safe
+    Postmarkdown::MarkdownRenderer.new.render(render(:inline => post.content)).html_safe
   end
 end
