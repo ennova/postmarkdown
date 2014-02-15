@@ -21,8 +21,10 @@ class PostsController < ApplicationController
   helper_method :resource
 
   def collection
+    options = params.slice(:year, :month, :day)
+    options[:visible] = true
     @collection ||= begin
-      posts = Post.where(params.slice(:year, :month, :day))
+      posts = Post.where(options)
       posts = Kaminari.paginate_array(posts).page(params[:page]).per(posts_per_page)
       posts
     end
