@@ -115,7 +115,9 @@ class Post
     end
 
     def find(id)
-      where(:to_param => id, :visible => true).first or raise ActiveRecord::RecordNotFound, "Could not find post with ID #{id.inspect}"
+      options = {:to_param => id}
+      options[:visible] = true unless Postmarkdown::Config.options[:allow_preview]
+      where(options).first or raise ActiveRecord::RecordNotFound, "Could not find post with ID #{id.inspect}"
     end
 
     def first
