@@ -201,7 +201,6 @@ current date reaches the date of your post.
 
 ## TODO
 
-* Syntax highlighting for code blocks
 * Generated routes should show example usage
 * Support more file formats, eg. textile
 * Built-in theme should have a link to the RSS Feed
