@@ -14,35 +14,35 @@ module Postmarkdown
 
     context 'with the slug parameter' do
       it 'creates a file for the slug and the current date' do
-        Timecop.freeze(Time.utc(2012, 1, 1, 10, 20, 30)) do
-          run_generator %w(test-post)
+        Time.zone.stub(:now).and_return Time.utc(2012, 1, 1, 10, 20, 30)
 
-          Dir.glob('tmp/app/posts/*').should == ['tmp/app/posts/2012-01-01-102030-test-post.markdown']
+        run_generator %w(test-post)
 
-          Post.all.count.should == 1
+        Dir.glob('tmp/app/posts/*').should == ['tmp/app/posts/2012-01-01-102030-test-post.markdown']
 
-          post = Post.first
-          post.slug.should == 'test-post'
-          post.date.should == Date.parse('2012-01-01')
-          post.title.should == 'Test post'
-        end
+        Post.all.count.should == 1
+
+        post = Post.first
+        post.slug.should == 'test-post'
+        post.date.should == Date.parse('2012-01-01')
+        post.title.should == 'Test post'
       end
     end
 
     context 'with the slug parameter including an underscore' do
       it 'creates the correct file and sets the right values' do
-        Timecop.freeze(Time.utc(2012, 1, 1, 10, 20, 30)) do
-          run_generator %w(test-post_with_underscores)
+        Time.zone.stub(:now).and_return Time.utc(2012, 1, 1, 10, 20, 30)
 
-          Dir.glob('tmp/app/posts/*').should == ['tmp/app/posts/2012-01-01-102030-test-post_with_underscores.markdown']
+        run_generator %w(test-post_with_underscores)
 
-          Post.all.count.should == 1
+        Dir.glob('tmp/app/posts/*').should == ['tmp/app/posts/2012-01-01-102030-test-post_with_underscores.markdown']
 
-          post = Post.first
-          post.slug.should == 'test-post_with_underscores'
-          post.date.should == Date.parse('2012-01-01')
-          post.title.should == 'Test post_with_underscores'
-        end
+        Post.all.count.should == 1
+
+        post = Post.first
+        post.slug.should == 'test-post_with_underscores'
+        post.date.should == Date.parse('2012-01-01')
+        post.title.should == 'Test post_with_underscores'
       end
     end
 
