@@ -25,6 +25,7 @@ RSpec.configure do |config|
   config.order = :random
 
   config.after do
+    back_to_the_present
     FileUtils.rm_rf('spec/tmp/app/posts/.')
   end
 end
