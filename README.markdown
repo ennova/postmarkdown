@@ -156,7 +156,7 @@ What about mapping Postmarkdown to root? We got you covered:
     postmarkdown :as => ''
     root :to => 'posts#index'
 
-## Allow Preview
+## Previewing Future-dated Posts
 
 By default Postmarkdown will only select posts that are dated before the
 current date.  If you're writing a post to be published sometime in the
