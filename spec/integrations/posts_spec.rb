@@ -190,6 +190,28 @@ describe 'Post views', :type => :request do
     end
   end
 
+  context "allow_preview" do
+    before { time_travel_to '2011-04-30' }
+
+    context "allow_preview = false (default)" do
+      it 'should not find the future post' do
+        lambda do
+          visit post_path('2011/05/01/full-metadata')
+        end.should raise_error(ActiveRecord::RecordNotFound)
+      end
+    end
+
+    context "allow_preview = true" do
+      before { Postmarkdown::Config.options[:allow_preview] = true }
+      after { Postmarkdown::Config.options[:allow_preview] = false }
+
+      it 'should show the post' do
+        visit post_path('2011/05/01/full-metadata')
+        page.should have_content('Post with full metadata') # title
+      end
+    end
+  end
+
   context 'theme' do
     before { @original_layout = Postmarkdown::Config.options[:layout] }
     after { Postmarkdown::Config.options[:layout] = @original_layout }

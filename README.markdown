@@ -156,6 +156,29 @@ What about mapping Postmarkdown to root? We got you covered:
     postmarkdown :as => ''
     root :to => 'posts#index'
 
+## Previewing Future-dated Posts
+
+By default Postmarkdown will only select posts that are dated before the
+current date. If you're writing a post to be published sometime in the
+future, you won't be able to view it in the browser.
+
+To override this behavior, add the following to an initializer
+(`config/initializers/postmarkdown.rb`):
+
+    Postmarkdown::Config.options[:allow_preview] = true
+
+Now, if you create a post with a future date, you can view it at
+the url of the individual post (posts#show route). Example:
+
+    $ rails generate postmarkdown:post future-post --date=2050-01-01
+
+Using the default routes, you could view the file at
+`http://localhost:3000/posts/2050/01/01/future-post`
+
+However, the post will not show up in your feed or index views until the
+current date reaches the date of your post.
+
+
 ## Example Directory Structure
 
     ├── app
@@ -178,7 +201,6 @@ What about mapping Postmarkdown to root? We got you covered:
 
 ## TODO
 
-* Syntax highlighting for code blocks
 * Generated routes should show example usage
 * Support more file formats, eg. textile
 * Built-in theme should have a link to the RSS Feed
