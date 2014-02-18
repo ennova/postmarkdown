@@ -15,6 +15,8 @@ Postmarkdown::Config.options[:posts_per_page] = 5
 
 Postmarkdown::Config.options[:layout] = 'application'
 
+Postmarkdown::Config.options[:allow_preview] = false
+
 Postmarkdown::Config.options[:permalink_regex] = {}
 Postmarkdown::Config.options[:permalink_regex][:day]   = %r[\d{4}/\d{2}/\d{2}/[^/]+]
 Postmarkdown::Config.options[:permalink_regex][:month] = %r[\d{4}/\d{2}/[^/]+]

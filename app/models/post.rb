@@ -81,6 +81,7 @@ class Post
   def visible?
     timestamp <= Time.zone.now
   end
+  alias_method :visible, :visible?
 
   def to_s
     "#{title.inspect} (#{slug})"
@@ -91,7 +92,11 @@ class Post
       file_extensions = Postmarkdown::Config.options[:markdown_file_extensions].join(',')
       @@posts ||= Dir.glob("#{directory}/*.{#{file_extensions}}").map do |filename|
         Post.new filename
-      end.select(&:visible?).sort_by { |post| [post.date, post.slug] }.reverse
+      end.sort_by { |post| [post.date, post.slug] }.reverse
+    end
+
+    def visible
+      all.select(&:visible?)
     end
 
     def directory
@@ -100,7 +105,7 @@ class Post
 
     def where(conditions = {})
       conditions = conditions.symbolize_keys
-      conditions.assert_valid_keys :year, :month, :day, :slug, :to_param
+      conditions.assert_valid_keys :year, :month, :day, :slug, :to_param, :visible
       [:year, :month, :day].each do |key|
         conditions[key] = conditions[key].to_i if conditions[key].present?
       end
@@ -110,19 +115,21 @@ class Post
     end
 
     def find(id)
-      where(:to_param => id).first or raise ActiveRecord::RecordNotFound, "Could not find post with ID #{id.inspect}"
+      options = {:to_param => id}
+      options[:visible] = true unless Postmarkdown::Config.options[:allow_preview]
+      where(options).first or raise ActiveRecord::RecordNotFound, "Could not find post with ID #{id.inspect}"
     end
 
     def first
-      all.first
+      visible.first
     end
 
     def last
-      all.last
+      visible.last
     end
 
     def feed
-      all.first(10)
+      visible.first(10)
     end
 
     def feed_last_modified

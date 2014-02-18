@@ -156,6 +156,20 @@ What about mapping Postmarkdown to root? We got you covered:
     postmarkdown :as => ''
     root :to => 'posts#index'
 
+## Previewing Future-dated Posts
+
+By default, Postmarkdown will only show posts that are dated on or before today.
+If you're writing a post to be published sometime in the future,
+you won't be able to view it in the browser.
+
+To override this behaviour, add the following to an initializer
+(`config/initializers/postmarkdown.rb`):
+
+    Postmarkdown::Config.options[:allow_preview] = true
+
+With the :allow_preview option set, you'll be able to view individual posts by
+their URL but they will remain hidden from the index and feed until the post date.
+
 ## Example Directory Structure
 
     ├── app
@@ -178,7 +192,6 @@ What about mapping Postmarkdown to root? We got you covered:
 
 ## TODO
 
-* Syntax highlighting for code blocks
 * Generated routes should show example usage
 * Support more file formats, eg. textile
 * Built-in theme should have a link to the RSS Feed
